@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/cubo.css">
+    <title>Cubo2.0</title>
+
+  </head>
+  <script>window.$ = window.jQuery = require('jquery');</script>
+
+  
+  <body>
+    <div class = "navPrincipal">
+            <!-- Vertical navbar -->
+      <div class="vertical-nav" id="sidebar">
+          <div class="py-4 px-3 mb-4">
+              <div class="media d-flex align-items-center"><img src="img/cubo5.0.svg" alt="..." width="65" class="mr-3 rounded-circle shadow-sm" id="iconoCubo"></div>
+          </div>
+         
+        
+          <p class="font-weight-bold text-uppercase px-3 small pb-4 mb-0 text-center" id="cuboletra">Cubo</p>
+        
+          <ul class="nav flex-column mb-1">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white font-arial" id="PaginaPrincipal">
+                        
+                        Principal
+                    </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white font-arial">
+                        
+                        Juegos
+                    </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white font-arial">
+                       
+                        Progreso
+                    </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white font-arial">
+                      
+                        Estadisticas
+                    </a>
+            </li>
+          </ul>
+         
+        </div>
+        <!-- End vertical navbar -->
+    </div>
+    <div class="Ingreso">
+        <div class="inciarSesion text-center ">
+          <h4 class="m-0">Iniciar Sesión</h4>
+        </div>
+        <form>
+          <div class="form-group row text-center">
+              <label for="encargado" class="col-sm-10 col-form-label">Encargado</label>
+              
+          </div>
+          <div class="form-group row ">
+              <div class="col-sm-11">
+                  <input type="text" class="form-control" id="encargado" placeholder="Nombre Del Encargado">
+              </div>
+          </div>
+          <div class="form-group row text-center">
+              <label for="jugador" class="col-sm-10 col-form-label">Jugador</label>
+              
+          </div>
+          <div class="form-group row">
+              <div class="col-sm-11">
+                  <input type="text" class="form-control" id="jugador" placeholder="Nombre Del Jugador">
+              </div>
+          </div>
+        </form>
+        <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Listo!</small></button>
+    </div>
+    <div class="VentanaDeJuegos">
+        <section class="container" id="CuboContainer">
+            <div id="cube">
+              <figure class="back rounded"></figure>
+              <figure class="left rounded"></figure>
+              <figure class="bottom rounded"></figure>
+              <figure class="front rounded"></figure>
+              <figure class="right rounded"></figure>
+              <figure class="top rounded"></figure>
+            </div>
+          </section>
+          <section class="botones">
+            <div class="boton" id="arriba">▲</div>
+            <div class="boton" id="abajo">▼</div>
+            <div class="boton" id="izquierda">◄</div>
+            <div class="boton" id="derecha">►</div>
+          </section>
+
+    </div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/cubo.js"></script>
+    <script src="js/desplazamiento.js"></script>
+  </body>
+</html>

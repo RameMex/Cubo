@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+
+}
+body{
+    height: 728px;
+    width: 100%;
+
+}
+.navPrincipal{
+    width: 100px;
+    height: 100%;
+    background-color: #26282a;
+    position: fixed;
+    z-index: 1;
+}
+#cuboletra{
+    color: #4edba7;
+}
+.Ingreso{
+    margin-left: 100px;
+    height: 100%;
+    width: 350px;
+    border-right:2px solid #4edba7;
+    transition: all 0.4s;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.VentanaDeJuegos{
+    position: absolute;
+    height: 800px;
+    width: 850px;
+    margin-top: -800px;
+    margin-left: 450px;
+    background-color: #4edba7;
+    transition: all 0.4s;
+} 
+.VentanaDeJuegos.active{
+    margin-left: 100px;
+    width: 1200px;
+    transition: all 0.4s;
+} 
+.Ingreso.active{
+    margin-left: -250px;
+    transition: all 0.4s;
+}
+form{
+    margin-top: 100px;
+}
+.col-sm-11{
+    margin-left: 20px;
+}
+#CuboContainer{
+    margin-top: 200px;
+}
+#iconoCubo{
+    border: 2px solid #4edba7;
+}

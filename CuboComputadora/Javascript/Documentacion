@@ -1,0 +1,10 @@
+Nav Vertical :
+    Principal       {Ingreso de datos , Encargado , jugador}
+    Juegos          {Diferentes tipos de juegos , con un buscador y filtros, cada juego tendra diferentes etiquetas}
+    Progreso        {Va a contener un icono, Niveles, }
+    Estadisticas    {Graficas, datos, lo necesario para observar el progreso}
+Nav solo en la parte Principal :
+    Nombre del Encargado
+    Nombre del jugador
+Ventana de juego
+    
