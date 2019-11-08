@@ -23,7 +23,7 @@
   }
   
   #cube .back {
-    background: hsla(0, 100%, 50%, 1);
+    background: hsla(300, 100%, 50%, 1);
     transform: rotateX(0deg) translateZ(-75px);
   }
   
@@ -33,7 +33,7 @@
   }
   
   #cube .bottom {
-    background: hsla(120, 100%, 50%, 1);
+    background: hsla(240, 100%, 50%, 1);
     transform: rotateX(90deg) translateZ(-75px);
   }
   
@@ -43,12 +43,12 @@
   }
   
   #cube .right {
-    background: hsla(240, 100%, 50%, 1);
+    background: hsla(120, 100%, 50%, 1);
     transform: rotateY(90deg) translateZ(75px);
   }
   
   #cube .top {
-    background: hsla(300, 100%, 50%, 1);
+    background: hsla(0, 100%, 50%, 1);
     transform: rotateX(90deg) translateZ(75px);
   }
   
