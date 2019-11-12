@@ -19,7 +19,7 @@ function createWindow () {
   win.loadFile('index.html')
 
   // Abre las herramientas de desarrollo (DevTools) con comando Ctrl+x.
-  globalShortcut.register('Control+X', () => {
+  globalShortcut.register('Control+A', () => {
     win.webContents.openDevTools()  
   })
   
