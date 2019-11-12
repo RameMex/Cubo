@@ -21,7 +21,7 @@ body{
     margin-left: 100px;
     height: 100%;
     width: 350px;
-    border-right:2px solid #4edba7;
+    border-right:2px solid #9e9e9e;
     transition: all 0.4s;
     z-index: -1;
     transition: all 0.4s;
@@ -33,7 +33,7 @@ body{
     width: 850px;
     margin-top: -800px;
     margin-left: 450px;
-    background-color: #4edba7;
+    background-color: #9e9e9e;
     transition: all 0.4s;
 } 
 .VentanaDeJuegos.active{
