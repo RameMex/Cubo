@@ -6,7 +6,7 @@ Codigo fuente para cubo interactivo con funcionalidad de mando.
 ---
 Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) para poder hacer uso de el comando npm. Ingresar a la carpeta ~/CuboComputadora/Javascript y correr el comando ``` npm start ```
 
-![alt text](~\CuboComputadora\Javascript\img\screen.png)
+![alt text](https://github.com/Quak1/Cubo/tree/master/CuboComputadora/Javascript/img/screen.png)
 
 
 ## TODO
@@ -17,4 +17,6 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 * Leer e interpretar datos giroscopio/acelerometro
 * Actividades
 
-### Actividades
+## Actividades
+---
+### Simon dice
