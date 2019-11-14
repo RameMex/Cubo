@@ -11,8 +11,7 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 * ~~Aplicacion base~~
 * ~~Lectura serial~~
 * Menu de configuracion
- 2. Seleccionar puerto
-  
+    *Seleccionar puerto
 * Leer e interpretar datos giroscopio/acelerometro
 * Actividades
 
