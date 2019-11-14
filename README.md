@@ -11,7 +11,10 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 * ~~Aplicacion base~~
 * ~~Lectura serial~~
 * Menu de configuracion
-   * Hola mundo
+   * Seleccionar puerto de comunicacion
+   * Seleccionar color fondo
+   * Volumen de la aplicacion
+   * Desactivar vibracion/buzzer
 * Leer e interpretar datos giroscopio/acelerometro
 * Actividades
 
