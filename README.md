@@ -19,6 +19,7 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 * Actividades
 
 ## Actividades
+### Simon dice
 * ~~Aplicacion base~~
 * ~~Lectura serial~~
 * Menu de configuracion
