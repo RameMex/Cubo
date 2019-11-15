@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, globalShortcut } = require('electron')
 
 // Mantén una referencia global del objeto window, si no lo haces, la ventana 
 // se cerrará automáticamente cuando el objeto JavaScript sea eliminado por el recolector de basura.
@@ -18,9 +18,11 @@ function createWindow () {
   // and load the index.html of the app.
   win.loadFile('index.html')
 
-  // Abre las herramientas de desarrollo (DevTools).
-  win.webContents.openDevTools()
-
+  // Abre las herramientas de desarrollo (DevTools) con comando Ctrl+x.
+  globalShortcut.register('Control+A', () => {
+    win.webContents.openDevTools()  
+  })
+  
   // Emitido cuando la ventana es cerrada.
   win.on('closed', () => {
     // Elimina la referencia al objeto window, normalmente  guardarías las ventanas
@@ -42,6 +44,8 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
+
+
 })
 
 app.on('activate', () => {
