@@ -13,17 +13,17 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 * Menu de configuracion
   * Seleccionar puerto de comunicacion
   * Seleccionar color fondo
-   * Volumen de la aplicacion
-   * Desactivar vibracion/buzzer
+  * Volumen de la aplicacion
+  * Desactivar vibracion/buzzer
 * Leer e interpretar datos giroscopio/acelerometro
 * Actividades
 
 ## Actividades
 ### Simon dice
 * Sistema de puntuación
-  * 1 punto = primer color
-  * 2 puntos = segundo color
-  * 3 puntos = tercer color, etc.
+ * 1 punto = primer color
+ * 2 puntos = segundo color
+ * 3 puntos = tercer color, etc.
 
 * Sistema de clasificación de dificultad (entre más grande sea la dificultad mas rápido es el cambio de un color a otro)
   * Fácil = 10 colores
