@@ -28,13 +28,16 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 * Leer e interpretar datos giroscopio/acelerometro
 * Actividades
 
-Lista de actividades para Cubo 2.0
-* Sistema de puntuación, juego “simón dice” (1 punto = primer color, 2 puntos = segundo color, 3 puntos = tercer color, etc.)
+
+* Sistema de puntuación
+  * 1 punto = primer color
+  * 2 puntos = segundo color
+  * 3 puntos = tercer color, etc.
 
 * Sistema de clasificación de dificultad (entre más grande sea la dificultad mas rápido es el cambio de un color a otro)
-* Fácil = 10 colores
-* Media = 15 colores
-* Difícil = 20 colores
-* Muy difícil = 30 colores
+  * Fácil = 10 colores
+  * Media = 15 colores
+  * Difícil = 20 colores
+  * Muy difícil = 30 colores
 
 * Por cada dificultad agregar una canción que sea acorde a ella (una melodía para fácil, una melodía para difícil y así sucesivamente).
