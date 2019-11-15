@@ -11,8 +11,8 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 * ~~Aplicacion base~~
 * ~~Lectura serial~~
 * Menu de configuracion
-   * Seleccionar puerto de comunicacion
-   * Seleccionar color fondo
+  * Seleccionar puerto de comunicacion
+  * Seleccionar color fondo
    * Volumen de la aplicacion
    * Desactivar vibracion/buzzer
 * Leer e interpretar datos giroscopio/acelerometro
@@ -20,7 +20,7 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 
 ## Actividades
 ### Simon dice
-* Sistema de puntuación, 
+* Sistema de puntuación
   * 1 punto = primer color
   * 2 puntos = segundo color
   * 3 puntos = tercer color, etc.
