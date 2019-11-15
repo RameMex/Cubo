@@ -21,7 +21,7 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 ## Actividades
 ### Simon dice
 * Sistema de puntuación
-    * 1 punto = primer color
+    * punto = primer color
     * 2 puntos = segundo color
     * 3 puntos = tercer color, etc.
 
