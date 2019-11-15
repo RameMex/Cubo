@@ -34,7 +34,12 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 * Por cada dificultad agregar una canción que sea acorde a ella (una melodía para fácil, una melodía para difícil y así sucesivamente).
 
 
-* Sistema de puntuacion
-    * 1 punto
-    * 2 puntos
-    * 3 puntos
+* ~~Aplicacion base~~
+* ~~Lectura serial~~
+* Menu de configuracion
+  * Seleccionar puerto de comunicacion
+  * Seleccionar color fondo
+  * Volumen de la aplicacion
+  * Desactivar vibracion/buzzer
+* Leer e interpretar datos giroscopio/acelerometro
+* Actividades
