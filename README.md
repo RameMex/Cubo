@@ -28,7 +28,6 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 * Leer e interpretar datos giroscopio/acelerometro
 * Actividades
 
-
 * Sistema de puntuación
   * 1 punto = primer color
   * 2 puntos = segundo color
