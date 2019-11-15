@@ -20,8 +20,6 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 
 ## Actividades
 ### Simon dice
-* ~~Aplicacion base~~
-* ~~Lectura serial~~
 * Menu de configuracion
   * Seleccionar puerto de comunicacion
   * Seleccionar color fondo
