@@ -1,4 +1,4 @@
-const { app, BrowserWindow, globalShortcut } = require('electron')
+const { app, BrowserWindow, globalShortcut, ipcMain } = require('electron')
 
 // Mantén una referencia global del objeto window, si no lo haces, la ventana 
 // se cerrará automáticamente cuando el objeto JavaScript sea eliminado por el recolector de basura.
@@ -8,7 +8,7 @@ function createWindow () {
   // Crea la ventana del navegador.
   win = new BrowserWindow({
     width: 1300,
-    height: 800,
+    height: 728,
     frame : false,
     webPreferences: {
       nodeIntegration: true
@@ -18,8 +18,8 @@ function createWindow () {
   // and load the index.html of the app.
   win.loadFile('index.html')
 
-  // Abre las herramientas de desarrollo (DevTools) con comando Ctrl+x.
-  globalShortcut.register('Control+A', () => {
+  // Abre las herramientas de desarrollador con comando Ctrl+X.
+  globalShortcut.register('Control+X', () => {
     win.webContents.openDevTools()  
   })
   
@@ -29,6 +29,20 @@ function createWindow () {
     // en un vector si tu aplicación soporta múltiples ventanas, este es el momento
     // en el que deberías borrar el elemento correspondiente.
     win = null
+  })
+
+  // Creacion ventana de configuracion
+  let configWin = new BrowserWindow({
+    parent: win,
+    modal: true,
+    show: true
+  })
+
+  // configWin.loadFile('html/config.html')
+  configWin.loadURL("https://www.google.com/")
+
+  ipcMain.on('show-config', function() {
+    configWin.show()
   })
 }
 
