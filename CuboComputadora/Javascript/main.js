@@ -17,11 +17,6 @@ function createWindow () {
 
   // and load the index.html of the app.
   win.loadFile('index.html')
-
-  // Abre las herramientas de desarrollador con comando Ctrl+X.
-  globalShortcut.register('Control+X', () => {
-    win.webContents.openDevTools()  
-  })
   
   // Emitido cuando la ventana es cerrada.
   win.on('closed', () => {
@@ -33,16 +28,22 @@ function createWindow () {
 
   // Creacion ventana de configuracion
   let configWin = new BrowserWindow({
-    parent: win,
-    modal: true,
-    show: true
+    parent: win, modal: true, show: false,
+    width: 500,
+    height: 600,
+    frame: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
 
-  // configWin.loadFile('html/config.html')
-  configWin.loadURL("https://www.google.com/")
+  configWin.loadFile("html/config.html")
 
-  ipcMain.on('show-config', function() {
-    configWin.show()
+  ipcMain.on('config-toggle', function() {
+    if (configWin.isVisible())
+      configWin.hide()
+    else
+      configWin.show()
   })
 }
 
