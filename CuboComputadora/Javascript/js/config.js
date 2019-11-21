@@ -27,18 +27,7 @@ btnRefresh.addEventListener('click', function() {
     )
 })
 
-
-var port
-const parser = new Readline({ delimiter: '\n'})
 btnConectar.addEventListener('click', function() {
-    console.log(selPuertos.value)
-
-    port = new SerialPort(String(selPuertos.value), {
-        baudRate: 38400
-    })
-    port.pipe(parser)
-})
-
-parser.on('data', function (data) {
-    console.log(data)
+    // console.log(selPuertos.value)
+    conectarPuerto(selPuertos.value)
 })
