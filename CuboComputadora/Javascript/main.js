@@ -31,7 +31,7 @@ function createWindow () {
     parent: win, modal: true, show: false,
     width: 500,
     height: 600,
-    frame: false,
+    frame: true,
     webPreferences: {
       nodeIntegration: true
     }

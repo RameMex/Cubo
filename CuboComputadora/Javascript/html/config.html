@@ -1,9 +1,43 @@
+<!DOCTYPE html>
+
 <html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        Hola, Mundo!
-        <script src="../js/config.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>config</title>
+  </head>
+
+  <script>window.$ = window.jQuery = require('jquery');</script>
+
+  <body>
+    <div class="text-center" style="padding-top: 20px;">
+          <h4>Configuración</h4>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col text-right" style="flex-grow: 2;">
+          Puerto Serial: 
+        </div>
+        <div class="col no-gutters">
+          <div class="form-group">
+            <select class="form-control form-control-sm" id="puertoCOM"></select>
+          </div>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-primary btn-sm" id="btnRefresh">Actualizar</button>
+          </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary btn-sm" id="btnConectar">Conectar</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="float-right" style="padding-right: 5px;">
+      <button type="button" class="btn btn-secondary" id="btnAceptar">Aceptar</button>
+      <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+    </div>
+
+    <script src="../js/config.js"></script>
+  </body>
 </html>

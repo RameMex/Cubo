@@ -2,13 +2,13 @@ const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline
 
 
-const port = new SerialPort('COM3', {
-    baudRate: 38400
-})
-const parser = new Readline({
-	delimiter: '\n'
-})
-port.pipe(parser)
+// const port = new SerialPort('COM7', {
+//     baudRate: 38400
+// })
+// const parser = new Readline({
+// 	delimiter: '\n'
+// })
+// port.pipe(parser)
 
 parser.on('data', function (data) {
 	if (data == 1){
