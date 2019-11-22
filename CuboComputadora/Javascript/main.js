@@ -3,6 +3,7 @@ const { app, BrowserWindow, globalShortcut, ipcMain } = require('electron')
 // Mantén una referencia global del objeto window, si no lo haces, la ventana 
 // se cerrará automáticamente cuando el objeto JavaScript sea eliminado por el recolector de basura.
 let win
+let configWin
 
 function createWindow () {
   // Crea la ventana del navegador.
@@ -17,6 +18,9 @@ function createWindow () {
 
   // and load the index.html of the app.
   win.loadFile('index.html')
+
+  // Abre de Developer tools
+  win.webContents.openDevTools()
   
   // Emitido cuando la ventana es cerrada.
   win.on('closed', () => {
@@ -27,7 +31,7 @@ function createWindow () {
   })
 
   // Creacion ventana de configuracion
-  let configWin = new BrowserWindow({
+  configWin = new BrowserWindow({
     parent: win, modal: true, show: false,
     width: 500,
     height: 600,
@@ -73,3 +77,15 @@ app.on('activate', () => {
 
 // En este archivo puedes incluir el resto del código del proceso principal de
 // tu aplicación. También puedes ponerlos en archivos separados y requerirlos aquí.
+
+ipcMain.on('ini_cubo', (event, arg) => {
+	win.webContents.send('conectar_cubo', arg)
+})
+
+ipcMain.on('cubo_err', function() {
+	configWin.webContents.send('cubo_err')
+})
+
+ipcMain.on('cubo_ok', function() {
+	configWin.webContents.send('cubo_ok')
+})

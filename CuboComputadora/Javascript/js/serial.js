@@ -1,11 +1,26 @@
-const SerialPort = require('serialport');
+const SerialPort = require('serialport')
 const Readline = SerialPort.parsers.Readline
 
 const parser = new Readline( {delimiter: '\n' })
-const port
+var port
+
 function conectarPuerto(puerto) {
-	port = new SerialPort(puerto, { baudRate: 38400})
-	port.pipe(parser)
+	try {
+		port = new SerialPort(puerto, { autoOpen: false, baudRate: 38400 })
+		port.open(function(err) {
+			if(err) {
+				ipcRenderer.send('cubo_err')
+			}
+			else{
+				port.pipe(parser)
+				ipcRenderer.send('cubo_ok')
+				console.log('exito conexion cubo')
+			}
+		})
+	}
+	catch {
+		ipcRenderer.send('cubo_err')
+	}
 }
 
 parser.on('data', function (data) {
@@ -33,3 +48,7 @@ parser.on('data', function (data) {
 function updateRotate(x, y, z){
 	$('#cube').attr('style', 'transform: rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg);')
 }
+
+ipcRenderer.on('conectar_cubo', (event, arg) => {
+	conectarPuerto(arg)
+})

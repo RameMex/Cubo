@@ -9,6 +9,7 @@ var btnCancelar = document.querySelector('#btnCancelar')
 var btnAceptar = document.querySelector('#btnAceptar')
 var btnRefresh = document.querySelector('#btnRefresh')
 var btnConectar = document.querySelector('#btnConectar')
+var lblConectar = document.querySelector('#lblConectar')
 
 btnCancelar.addEventListener('click', function() {
     ipcRenderer.send("config-toggle")
@@ -28,6 +29,28 @@ btnRefresh.addEventListener('click', function() {
 })
 
 btnConectar.addEventListener('click', function() {
-    // console.log(selPuertos.value)
-    conectarPuerto(selPuertos.value)
+	ipcRenderer.send("ini_cubo", selPuertos.value)
+	
+	btnConectar.classList.remove('btn-danger')
+	btnConectar.classList.remove('btn-success')
+	btnConectar.classList.add('btn-primary')
+
+	lblConectar.innerHTML = 'Conectando'
+})
+
+ipcRenderer.on('cubo_err', function(){
+	console.log('error al conectar el cubo')
+	btnConectar.classList.remove('btn-primary')
+	btnConectar.classList.remove('btn-success')
+	btnConectar.classList.add('btn-danger')
+
+	lblConectar.innerHTML = 'Error!'
+})
+
+ipcRenderer.on('cubo_ok', function() {
+	btnConectar.classList.remove('btn-primary')
+	btnConectar.classList.remove('btn-danger')
+	btnConectar.classList.add('btn-success')
+
+	lblConectar.innerHTML = ''
 })
