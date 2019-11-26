@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/config.css">
+    <title>config</title>
+  </head>
+
+  <script>window.$ = window.jQuery = require('jquery');</script>
+
+  <body>
+    <div class="text-center" style="padding-top: 20px;">
+          <h4>Configuración</h4>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col col-4 text-right" style="flex-grow: 2;">
+          Puerto Serial: 
+        </div>
+        <div class="col col-3 no-gutters">
+          <div class="form-group">
+            <select class="form-control form-control-sm" id="puertoCOM"></select>
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <button type="button" class="btn btn-primary btn-sm" id="btnRefresh">Actualizar</button>
+            <button type="button" class="btn btn-primary btn-sm" id="btnConectar">Conectar</button>
+            <label id="lblConectar" style="color: red;"></label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Otra opcion de configuracion -->
+      </div>
+    </div>
+    
+    <div class="float-right" style="padding-right: 5px; padding-top: 25px;">
+      <button type="button" class="btn btn-secondary" id="btnAceptar">Aceptar</button>
+      <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+    </div>
+
+    <script src="../js/config.js"></script>
+  </body>
+</html>
