@@ -8,7 +8,7 @@ let configWin
 function createWindow () {
   // Crea la ventana del navegador.
   win = new BrowserWindow({
-    width: 1300,
+    width: 1200,
     height: 728,
     frame : false,
     webPreferences: {
@@ -20,7 +20,7 @@ function createWindow () {
   win.loadFile('index.html')
 
   // Abre de Developer tools
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
   
   // Emitido cuando la ventana es cerrada.
   win.on('closed', () => {

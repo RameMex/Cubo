@@ -15,6 +15,10 @@ btnCancelar.addEventListener('click', function() {
     ipcRenderer.send("config-toggle")
 })
 
+btnAceptar.addEventListener('click', function() {
+    ipcRenderer.send("config-toggle")
+})
+
 btnRefresh.addEventListener('click', function() {
     selPuertos.innerHTML = ""
 
