@@ -44,7 +44,6 @@ parser.on('data', function (data) {
 		updateRotate(0, -180, 0)
 	}
 })
-
 function updateRotate(x, y, z){
 	$('#cube').attr('style', 'transform: rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg);')
 }

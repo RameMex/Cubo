@@ -1,5 +1,7 @@
 var angX = 0;
 var angY = 0;
+var sum = 45;
+var valorCaraActual;
 document.onkeydown = checkKey;
 function checkKey(e) {
 
@@ -7,22 +9,24 @@ function checkKey(e) {
 
     if (e.keyCode == '38') {
         // Arriba
-        angX = angX + 45;
+        angX = angX + sum;
     }
     else if (e.keyCode == '40') {
         // Abajo
-        angX = angX - 45;
+        angX = angX - sum;
+
     }
     else if (e.keyCode == '37') {
        // Izquierda
-       angY = angY - 45;
+       angY = angY - sum;
     }
     else if (e.keyCode == '39') {
        // Derecha
-       angY = angY + 45;
+       angY = angY + sum;
     }
     $('#cube').attr('style', 'transform: rotateX(' + angX + 'deg) rotateY(' + angY + 'deg);')
 
+    valorCaraActual = CaraADetectar();
 }
 $('.boton').on('click', function() {
   switch ($(this).attr("id")) {

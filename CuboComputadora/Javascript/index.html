@@ -12,75 +12,162 @@
 
   
   <body>
-    <div class = "navPrincipal">
-          <!-- Vertical navbar -->
-      <div class="vertical-nav" id="sidebar">
-          <div class="py-4 px-3 mb-4">
-              <div class="media d-flex align-items-center"><img src="img/cubo5.0.svg" alt="..." width="65" class="mr-3 rounded-circle shadow-sm" id="iconoCubo"></div>
+    <div class="contPrincipal raw">
+      <div class="contSubprincipal col-md-2">
+        <div class = "navPrincipal col-md-2">
+              <!-- Vertical navbar -->
+          <div class="vertical-nav" id="sidebar">
+              <div class="py-4 px-3 mb-4">
+                  <div class="media d-flex align-items-center"><img src="img/cubo5.0.svg" alt="..." width="65" class="mr-3 rounded-circle shadow-sm" id="iconoCubo"></div>
+              </div>
+            
+            
+              <p class="font-weight-bold text-uppercase px-3 small pb-4 mb-0 text-center" id="cuboletra">Cubo</p>
+            
+              <ul class="nav flex-column mb-1">
+                <li class="nav-item">
+                  <a href="#" class="nav-link text-white font-arial" id="PaginaPrincipal">
+                            
+                            Principal
+                        </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link text-white font-arial" id="Juegos">
+                            
+                            Juegos
+                        </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link text-white font-arial">
+                          
+                            Progreso
+                        </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link text-white font-arial">
+                          
+                            Estadisticas
+                        </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white font-arial" id="MenuConfiguracion">
+                            
+                              Configuracion
+                          </a>
+                  </li>
+              </ul>
           </div>
-        
-        
-          <p class="font-weight-bold text-uppercase px-3 small pb-4 mb-0 text-center" id="cuboletra">Cubo</p>
-        
-          <ul class="nav flex-column mb-1">
-            <li class="nav-item">
-              <a href="#" class="nav-link text-white font-arial" id="PaginaPrincipal">
-                        
-                        Principal
-                    </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link text-white font-arial">
-                        
-                        Juegos
-                    </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link text-white font-arial">
-                      
-                        Progreso
-                    </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link text-white font-arial">
-                      
-                        Estadisticas
-                    </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-white font-arial" id="MenuConfiguracion">
-                        
-                          Configuracion
-                      </a>
-              </li>
-          </ul>
+        </div> 
+          <!-- End vertical navbar -->
       </div>
-        <!-- End vertical navbar -->
-    </div>
-
-    <div class="VentanaDeJuegos">
-        <section class="container" id="CuboContainer">
-            <div id="cube">
-              <figure class="back rounded"></figure>
-              <figure class="left rounded"></figure>
-              <figure class="bottom rounded"></figure>
-              <figure class="front rounded"></figure>
-              <figure class="right rounded"></figure>
-              <figure class="top rounded"></figure>
+      <div class="contSubprincipal col-md-12">
+        <div class="VentanaDeJuegos">
+            <section class="container" id="CuboContainer">
+                <div id="cube">
+                  <figure class="back rounded" id="back"></figure>
+                  <figure class="left rounded" id="left"></figure>
+                  <figure class="bottom rounded" id="bottom"></figure>
+                  <figure class="front rounded" id="front"></figure>
+                  <figure class="right rounded" id="right"></figure>
+                  <figure class="top rounded" id="top"></figure>
+                </div>
+              </section>
+              <!-- 
+               <section class="botones">
+                <div class="boton" id="arriba">▲</div>
+                <div class="boton" id="abajo">▼</div>
+                <div class="boton" id="izquierda">◄</div>
+                <div class="boton" id="derecha">►</div>
+              </section>
+              -->
+            <div class="col" id="menuJuego">
+                <div class="opcionesJuego raw-md-2" id="Nivel1">
+                    <select class = "nivelSeleccion form-control" name="" id="selectorNiveles" >
+                      <option value="1" >Nivel 1</option>
+                      <option value="2" id="valor1">Nivel 2</option>
+                      <option value="3">Nivel 3</option>
+                    </select>
+                    <select onchange="this.className=this.options[this.selectedIndex].className" name="seleccionColor" id="caja1">
+                      <option  class = "noseleccion" value=""></option>
+                      <option class ="rojocaja"  value="1"></option>
+                      <option class ="azulcaja" value="2"></option>
+                      <option class ="rosacaja" value="3"></option>
+                      <option class ="verdecaja" value="4"></option>
+                      <option class ="amarrillocaja" value="5"></option>
+                      <option class ="celestecaja" value="6"></option>
+                    </select>
+                    <select onchange="this.className=this.options[this.selectedIndex].className" name="seleccionColor" id="caja2">
+                        <option  class = "noseleccion" value=""></option>
+                        <option class ="rojocaja" value="1"></option>
+                        <option class ="azulcaja" value="2"></option>
+                        <option class ="rosacaja" value="3"></option>
+                        <option class ="verdecaja" value="4"></option>
+                        <option class ="amarrillocaja" value="5"></option>
+                        <option class ="celestecaja" value="6"></option>
+                      </select>
+                      <select onchange="this.className=this.options[this.selectedIndex].className" name="seleccionColor" id="caja3">
+                          <option  class = "noseleccion" value=""></option>
+                          <option class ="rojocaja" value="1"></option>
+                          <option class ="azulcaja" value="2"></option>
+                          <option class ="rosacaja" value="3"></option>
+                          <option class ="verdecaja" value="4"></option>
+                          <option class ="amarrillocaja" value="5"></option>
+                          <option class ="celestecaja" value="6"></option>
+                        </select>
+                    
+                </div>
+                <div class="botonJugar" id="botonJugar"><p class="btn btn-primary btn-lg btn-block">Jugar</p></div>
             </div>
-          </section>
-          <section class="botones">
-            <div class="boton" id="arriba">▲</div>
-            <div class="boton" id="abajo">▼</div>
-            <div class="boton" id="izquierda">◄</div>
-            <div class="boton" id="derecha">►</div>
-          </section>
+        </div>
+      </div>
+      <div class="vamosaver"><p id= "tiempo"></p></div>
+      <div class="vamosaver"><p id= "corazon1"></p></div>
+      <div class="vamosaver"><p id= "corazon2"></p></div>
+      <div class="vamosaver"><p id= "corazon3"></p></div>
+      <div class="barraPuntos">
+        <div class="puntos raw">
+          <div class="txt text-center"><p id= "Puntostt"></p></div>
+        </div> 
+        <div class="secuencia raw">
+          <div class="cuboSecuencia raw-md-4" id="CarasMod"></div>
+        </div>
+      </div>
     </div>
+    <div class="barraJuegos">
+      <div class="juegos">
+        <div class="subjuegos" id="Buscando"><h1 class = "" id="BdeBuscando">B</h1></div>
+        <h4 class="subjuegostitulo">Buscando La Cara</h4>
+        <div class="subjuegos" id="SimonDice"><h1 class = "" id="SdeSimonDice">S</h1></div>
+        <h4 class="subjuegostitulo">Simon Dice</h4>
+        
+      </div>
+      <div class="barrades">
+        <h1 id="arrow"> < </h1>
+      </div>
     </div>
-    
+    <div class="AnuncioD col" id="JuegoPerdido">
+      <div class="raw-sm-4"></div>
+      <div class="raw-sm-4">
+          <div class="col-sm-2" id="Salir"></div>
+          <div class="col-sm-2" id="JuegarDeNuevo"></div>
+      </div>
+    </div>
+    <div class="contRondas col"> 
+        <div class="Rondas raw-md-2" id="Ronda1"><h4>1</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda2"><h4>2</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda3"><h4>3</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda4"><h4>4</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda5"><h4>5</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda6"><h4>6</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda7"><h4>7</h4></div>
+        
+    </div>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/cubo.js"></script>
     <script src="js/menu_lateral.js"></script>
     <script src="js/serial.js"></script>
+    <script src="js/barrapuntos.js"></script>
+    <script src="js/juegos/BuscandoCara.js"></script>
+    <script src="js/juegos/simondice.js"></script>
   </body>
 </html>

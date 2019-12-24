@@ -11,7 +11,7 @@
     height: 100%;
     position: absolute;
     transform-style: preserve-3d;
-    transition: all 0.2s;
+    transition: all 0.1s;
   }
   
   #cube figure {
@@ -58,7 +58,7 @@
     margin: 0 auto;
     position: relative;
    }
-  
+   
   .boton {
     /*estructura*/
     width: 30px;
