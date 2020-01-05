@@ -89,3 +89,7 @@ ipcMain.on('cubo_err', function() {
 ipcMain.on('cubo_ok', function() {
 	configWin.webContents.send('cubo_ok')
 })
+
+ipcMain.on('customCmd', (event, arg) => {
+	win.webContents.send('custom_Cmd', arg)
+})

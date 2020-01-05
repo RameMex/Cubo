@@ -10,6 +10,8 @@ var btnAceptar = document.querySelector('#btnAceptar')
 var btnRefresh = document.querySelector('#btnRefresh')
 var btnConectar = document.querySelector('#btnConectar')
 var lblConectar = document.querySelector('#lblConectar')
+var btnEnviarCmd = document.querySelector('#btnSendCmd')
+var txtCmd = document.querySelector('#inputCmd')
 
 btnCancelar.addEventListener('click', function() {
     ipcRenderer.send("config-toggle")
@@ -40,6 +42,10 @@ btnConectar.addEventListener('click', function() {
 	btnConectar.classList.add('btn-primary')
 
 	lblConectar.innerHTML = 'Conectando'
+})
+
+btnEnviarCmd.addEventListener('click', function() {
+	ipcRenderer.send("customCmd", txtCmd.value)
 })
 
 ipcRenderer.on('cubo_err', function(){
