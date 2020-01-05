@@ -55,3 +55,9 @@ ipcRenderer.on('conectar_cubo', (event, arg) => {
 ipcRenderer.on('custom_Cmd', (event, arg) => {
 	port.write(arg)
 })
+
+ipcRenderer.on('cambio_Brillo', (event, arg) => {
+	var cmd = "<2," + arg + ">"
+	console.log(cmd)
+	port.write(cmd)
+})

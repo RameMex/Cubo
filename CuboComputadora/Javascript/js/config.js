@@ -12,6 +12,7 @@ var btnConectar = document.querySelector('#btnConectar')
 var lblConectar = document.querySelector('#lblConectar')
 var btnEnviarCmd = document.querySelector('#btnSendCmd')
 var txtCmd = document.querySelector('#inputCmd')
+var sldBrillo = document.querySelector('#sliderBrillo')
 
 btnCancelar.addEventListener('click', function() {
     ipcRenderer.send("config-toggle")
@@ -47,6 +48,10 @@ btnConectar.addEventListener('click', function() {
 btnEnviarCmd.addEventListener('click', function() {
 	ipcRenderer.send("customCmd", txtCmd.value)
 })
+
+sldBrillo.oninput = function() {
+	ipcRenderer.send("cambioBrillo", sldBrillo.value)
+}
 
 ipcRenderer.on('cubo_err', function(){
 	console.log('error al conectar el cubo')

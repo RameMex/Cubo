@@ -93,3 +93,7 @@ ipcMain.on('cubo_ok', function() {
 ipcMain.on('customCmd', (event, arg) => {
 	win.webContents.send('custom_Cmd', arg)
 })
+
+ipcMain.on('cambioBrillo', (event, arg) => {
+	win.webContents.send('cambio_Brillo', arg)
+})
