@@ -19,36 +19,36 @@
     width: 100%;
     height: 100%;
     margin: 0;
-    border: 2px solid white;
+    /*border: 2px solid white;*/
   }
   
   #cube .back {
-    background: hsla(300, 100%, 50%, 1);
+    background: hsla(300, 100%, 60%, 1);
     transform: rotateX(0deg) translateZ(-75px);
   }
   
   #cube .left {
-    background: hsla(60, 100%, 50%, 1);
+    background: hsla(60, 100%, 60%, 1);
     transform: rotateY(90deg) translateZ(-75px);
   }
   
   #cube .bottom {
-    background: hsla(240, 100%, 50%, 1);
+    background: hsla(240, 100%, 60%, 1);
     transform: rotateX(90deg) translateZ(-75px);
   }
   
   #cube .front {
-    background: hsla(180, 100%, 50%, 1);
+    background: hsla(180, 100%, 60%, 1);
     transform: rotateX(0deg) translateZ(75px);
   }
   
   #cube .right {
-    background: hsla(120, 100%, 50%, 1);
+    background: hsla(120, 100%, 60%, 1);
     transform: rotateY(90deg) translateZ(75px);
   }
   
   #cube .top {
-    background: hsla(0, 100%, 50%, 1);
+    background: hsla(0, 100%, 60%, 1);
     transform: rotateX(90deg) translateZ(75px);
   }
   
@@ -64,7 +64,7 @@
     width: 30px;
     height: 30px;
     background-color: black;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     position: absolute;
     /*texto*/ 
     color: white;

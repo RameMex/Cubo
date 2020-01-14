@@ -8,3 +8,11 @@ Nav solo en la parte Principal :
     Nombre del jugador
 Ventana de juego
 Hacer vector de datos acelerometro , giroscopio.
+
+Juegos
+    Buscando Cara: EL juego tiene 3 niveles , en los cuales se basa en buscar la cara con el color que se busca , el color 
+                    aparece en la parte superior derecha , y como se mueve el cubo en la parte del centro. Los niveles cambian 
+                    la cantidad de colores que tiene el cubo al mismo tiempo , Nivel 1: 2 colores , Nivel 2 : 3 colores y
+                    Nivel 3 : 6 colores.
+
+    Simon Dice : Se muestra una secuencia la cual el usuario debe seguir despues de que acabe.

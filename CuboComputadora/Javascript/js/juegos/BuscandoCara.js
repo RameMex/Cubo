@@ -1,4 +1,5 @@
-var SimonDice = new Array (0,0,0,0,10,0,0,0,0,0);
+
+var BuscandoCara = new Array (0,0,0,0,0,0,0,0,0,0);
 var tiempo = 0;
 var ronda = 0;                          //
 var inicial;
@@ -7,13 +8,17 @@ var JugandoAhora = false;
 var ValorTiempoActual = 0;              //
 var valorTiempo = 0;                    //
 var Puntos = 0;                         //
-var vidas = 3;                          //
+var vidas = 4;                          // vidas == vidas -1
 var nivel = 0;                          
-var TiempoEntreCara = 2000;
+var TiempoEntreCara = 5000;
 var numAleatorio = 0;
-var ColorCaja1Principal;
-var ColorCaja2Principal;
-var ColorCaja3Principal;
+var valorCaja1Principal;
+var valorCaja2Principal;
+var valorCaja3Principal;
+var valorCaja4Principal;
+var valorCaja5Principal;
+var valorCaja6Principal;
+
 var DivTotal = -1;                       // 
 var rondaAnterior = 3;                   //
 var rondaAnterior2 = 0;                  //
@@ -21,18 +26,18 @@ var SaltoLinea = -1;                     //
 var EspacioLinea = -1;                   //
 var RondaTexto = 0;                      //
 var jugGanado = false;
-
-function nuevoJuego(nivel2,caja1,caja2,caja3){
+// Variable Global 
+var JuegoQueSeJuega = '';
+var temporal = false;
+var tiempoDeInicio = 5000;
+function NuevoJuego(nivelAct){
     ReiniciandoVariables();
-    nivel = nivel2;
-    asignandoValorCara(caja1,caja2,caja3);
+    nivel = nivelAct;
+    seleccionDeCara();
     var e = true;
     var Perdio = false;
     var GanoRondas = false;
     var numDivs = 1;
-    var caja1 = caja1;
-    var caja2 = caja2;
-    var caja3 = caja3;
     
     cuerpoJuego(vidas,Puntos);
    
@@ -151,11 +156,18 @@ function cuerpoJuego(){
     clearTimeout(inicial);
     
     inicial= setTimeout(function(){
-        
+        if(numAleatorio == 0){
+            if(valorTiempo == tiempoDeInicio){
+                comparacionDiv();
+                valorTiempo = 0;
+                temporal = true;
+            }
+            
+        }
         ValorTiempoActual = ValorTiempoActual + 0.01;
         document.getElementById('tiempo').innerHTML = "Tiempo :" + (ValorTiempoActual).toFixed(2)+" S";
         valorTiempo = valorTiempo+ 10 ;
-        if(valorTiempo == TiempoEntreCara){ 
+        if(valorTiempo == TiempoEntreCara && temporal == true){ 
             valorTiempo = 0; 
             if(nivel == 1){
                 adentroDelCallbackNivel1(); 
@@ -175,6 +187,7 @@ function cuerpoJuego(){
          }else{
             cuerpoJuego();
             finDelJuego();
+            quitarVidas();
             
          }
      }, 10);
@@ -199,6 +212,7 @@ function ordenar(){
     alert('el orden de los números es  ' + SimonDice1[0] + '-' + SimonDice1[1] + '-' + SimonDice1[2] + '-' + SimonDice1[3] + '-' + SimonDice1[4] + '-' + SimonDice1[5] + '-' + SimonDice1[6]);
   }
 function adentroDelCallbackNivel1(){
+    
     JugandoAhora = true;
     valorCaraActual = CaraADetectar()
     //var numAleatorio;
@@ -216,36 +230,11 @@ function adentroDelCallbackNivel1(){
             console.log("Una vida menos( "+vidas+" )");
         }
     }
-    //numAleatorio = numAleatorioDes;
-    numAleatorio = Math.round(Math.random() * (6 - 1) + 1);
-    if(rondaAnterior == 2 && DivTotal == 0){
-        RondaTexto = 1;
-        //agregandoTextoRonda()
-    }
-    if(numAleatorio < 4){
-        creandoDiv(ColorCaja1Principal)
-        DivsMovimientoCreacion();
-        //nuevoDiv = document.createElement('div');
-        //nuevoDiv.className = 'cuboSecuencia';
-       // $(".cuboSecuencia").css("backgroundColor",ColorCaja1Principal );
-
-        //colorCaraCubo(ColorCaja1Principal);
-
-    }
-    if(numAleatorio > 3){
-        console.log("Azul")
-        //nuevoDiv = document.createElement('div');
-       // nuevoDiv.className = 'cuboSecuencia';
-        //$(".cuboSecuencia").css("backgroundColor",ColorCaja2Principal );
-        creandoDiv(ColorCaja2Principal);
-        DivsMovimientoCreacion();
-
-    }
+    comparacionDiv()
     
-    
-    console.log(numAleatorio);
 }
 function adentroDelCallbackNivel2(){
+    
     JugandoAhora = true;
     valorCaraActual = CaraADetectar()
     //var numAleatorio;
@@ -266,49 +255,41 @@ function adentroDelCallbackNivel2(){
             console.log("Una vida menos( "+vidas+" )");
         }
     }
-    //numAleatorio = numAleatorioDes;
-    numAleatorio = Math.round(Math.random() * (6 - 1) + 1);
-    if(rondaAnterior == 2 && DivTotal == 0){
-        RondaTexto = 1;
-        //agregandoTextoRonda()
-    }
-    if(numAleatorio < 3){
-        creandoDiv(ColorCaja1Principal)
-        DivsMovimientoCreacion();
-        //nuevoDiv = document.createElement('div');
-        //nuevoDiv.className = 'cuboSecuencia';
-       // $(".cuboSecuencia").css("backgroundColor",ColorCaja1Principal );
-
-        //colorCaraCubo(ColorCaja1Principal);
-
-    }
-    if(numAleatorio > 2 && numAleatorio < 5){
-        creandoDiv(ColorCaja2Principal)
-        DivsMovimientoCreacion();
-    }
-    if(numAleatorio > 4){
-        console.log("Azul")
-        //nuevoDiv = document.createElement('div');
-       // nuevoDiv.className = 'cuboSecuencia';
-        //$(".cuboSecuencia").css("backgroundColor",ColorCaja2Principal );
-        creandoDiv(ColorCaja3Principal)
-        DivsMovimientoCreacion();
-        
-
-    }
+    comparacionDiv();
     
-    
-    console.log(numAleatorio);
 }
-function creandoDiv(Colordecaja){
+function adentroDelCallbackNivel3(){
+    
+    JugandoAhora = true;
+    valorCaraActual = CaraADetectar()
+    //var numAleatorio;
+    if(nivel == 3 && (ValorTiempoActual*1000 > TiempoEntreCara) ){  
+
+        if(numAleatorio ==  valorCaraActual){
+            Puntos+= 100;
+            document.getElementById('Puntostt').innerHTML = "Puntos :" + Puntos;
+        }else{
+            vidas-=1;
+            console.log("Una vida menos( "+vidas+" )");  
+        }
+    }
+    comparacionDiv();
+    
+}
+function creandoDiv(valorCara,valorSeleccion){
     ronda += 1;
     //var btn = document.createElement("DIV");
     //btn.innerHTML = "CLICK ME";
-    
     var CreandoDiv = document.createElement('DIV');
     CreandoDiv.className = 'Div' + ronda;
     document.body.appendChild(CreandoDiv);
-    $('.Div' + ronda).css("backgroundColor",Colordecaja );
+    //
+    $('.Div' + ronda).css("backgroundColor",valorCara );
+    if(valorSeleccion > 0 ){
+        $('.Div' + ronda).css("background-image",'url('+direccionImagenes+valorCara+')' );
+        $('.Div' + ronda).css("background-repeat",'no-repeat' );
+        //$('.Div' + ronda).css("backgroundColor",'white' );
+    }
     $('.Div' + ronda).css("height","200px" );
     $('.Div' + ronda).css("width","200px" );
     $('.Div' + ronda).css("position","fixed" );
@@ -316,6 +297,7 @@ function creandoDiv(Colordecaja){
     $('.Div' + ronda).css("margin-top","-720px" );
     $('.Div' + ronda).css("transition","all 0.4s" );
     $('.Div' + ronda).css("border","4px solid white" );
+    //$('.Div' + ronda).css("background-image","url("img/imgCaras/DodecahedronGeometry.svg")" );
     
 }
 function moviendoDiv(variablex){
@@ -331,8 +313,8 @@ function moviendoDiv(variablex){
        
     }
      //$('.Div' + (ronda - 1)).attr('style','transform:scale(0.25,0.25); margin-left: '+ (66 + EspacioLinea*2) +'%; margin-top:'+ (-520 + SaltoLinea*30) +'px; height:200px; width:200px; background-color:black; transition: all 0.4; ')
-     $('.Div' + (ronda - 1)).css("margin-left",(66 + (EspacioLinea*3))+"%");
-     $('.Div' + (ronda - 1)).css("margin-top",(-480 + (SaltoLinea*60))+"px");
+     $('.Div' + (ronda - 1)).css("margin-left",(64 + (EspacioLinea*3))+"%");
+     $('.Div' + (ronda - 1)).css("margin-top",(-510 + (SaltoLinea*40))+"px");
      $('.Div' + (ronda - 1)).css("transform","scale(0.15,0.15)");
      $('.Div' + (ronda - 1)).css("transition","all 0.4s");
      $('.Div' + (ronda - 1)).css("border","4px solid white");
@@ -388,8 +370,8 @@ function asignandoValorCara(caja1,caja2,caja3){
         $(".front").css("backgroundColor",ColorCaja2 );
         $(".left").css("backgroundColor",ColorCaja2 );
         $(".back").css("backgroundColor",ColorCaja2 );
-        ColorCaja1Principal = ColorCaja1;
-        ColorCaja2Principal = ColorCaja2;
+        valorCaja1Principal = ColorCaja1;
+        valorCaja2Principal = ColorCaja2;
     }else if(nivel == 2){
         //var Color1 = document.getElementsByClassName("right") //verde
         var Color2 = document.getElementsByClassName("bottom ") //azul
@@ -424,20 +406,29 @@ function asignandoValorCara(caja1,caja2,caja3){
         $(".front").css("backgroundColor",ColorCaja2 );
         $(".left").css("backgroundColor",ColorCaja3 );
         $(".back").css("backgroundColor",ColorCaja3 );
-        ColorCaja1Principal = ColorCaja1;
-        ColorCaja2Principal = ColorCaja2;
-        ColorCaja3Principal = ColorCaja3;
+        valorCaja1Principal = ColorCaja1;
+        valorCaja2Principal = ColorCaja2;
+        valorCaja3Principal = ColorCaja3;
 
     }else if(nivel == 3){
+        valorCaja1Principal = "hsla(120, 100%, 50%, 1)";
+        valorCaja2Principal = "hsla(240, 100%, 50%, 1)";
+        valorCaja3Principal = "hsla(0, 100%, 50%, 1)";
+        valorCaja4Principal = "hsla(300, 100%, 50%, 1)";
+        valorCaja5Principal = "hsla(60, 100%, 50%, 1)";
+        valorCaja6Principal = "hsla(180, 100%, 50%, 1)";
 
     }else{
         alert("Error");
+        
     }
         
     
 }
 function ReiniciandoVariables(){
     eliminarDiv();
+    temporal = false;
+    numAleatorio = 0;
     Puntos = 0;
     vidas = 3;
     ValorTiempoActual = 0;
@@ -492,7 +483,103 @@ function eliminarDiv(){
     $('.Div18').remove();
     $('.Div19').remove();
     $('.Div20').remove();
+    $('.Div21').remove();
+    $('.Div22').remove();
+    $('.Div23').remove();
+    $('.Div24').remove();
+    $('.Div25').remove();
+    $('.Div26').remove();
+    $('.Div27').remove();
+    $('.Div28').remove();
+    $('.Div29').remove();
+    $('.Div30').remove();
+    $('.Div31').remove();
+    $('.Div32').remove();
+    $('.Div33').remove();
+    $('.Div34').remove();
+    $('.Div35').remove();
 
 
+}
+function QuitandoBuscandoCaras(){
+    eliminarDiv();
 
+}
+
+function comparacionDiv(){
+    numAleatorio = Math.round(Math.random() * (6 - 1) + 1);
+    if(nivel == 1 ){
+        valorCaja1Principal = detectarValorSelectorCaras()[0];
+        valorCaja2Principal = detectarValorSelectorCaras()[1];
+        var valorSeleccion = detectarValorSelectorCaras()[2];
+        if(rondaAnterior == 2 && DivTotal == 0){
+            RondaTexto = 1;
+        }
+        if(numAleatorio < 4){
+            creandoDiv(valorCaja1Principal,valorSeleccion)
+            DivsMovimientoCreacion();
+        }
+        if(numAleatorio > 3){
+            creandoDiv(valorCaja2Principal,valorSeleccion);
+            DivsMovimientoCreacion();
+        }
+
+    }else if(nivel == 2){
+        valorCaja1Principal = detectarValorSelectorCaras()[0];
+        valorCaja2Principal = detectarValorSelectorCaras()[1];
+        valorCaja3Principal = detectarValorSelectorCaras()[2];
+        var valorSeleccion = detectarValorSelectorCaras()[3];
+        if(rondaAnterior == 2 && DivTotal == 0){
+            RondaTexto = 1;
+        }
+        if(numAleatorio < 3){
+            creandoDiv(valorCaja1Principal,valorSeleccion)
+            DivsMovimientoCreacion();
+        }
+        if(numAleatorio > 2 && numAleatorio < 5){
+            creandoDiv(valorCaja2Principal,valorSeleccion)
+            DivsMovimientoCreacion();
+        }
+        if(numAleatorio > 4){
+            creandoDiv(valorCaja3Principal,valorSeleccion)
+            DivsMovimientoCreacion();
+        }
+
+    }else if(nivel == 3){
+        valorCaja1Principal = detectarValorSelectorCaras()[0];
+        valorCaja2Principal = detectarValorSelectorCaras()[1];
+        valorCaja3Principal = detectarValorSelectorCaras()[2];
+        valorCaja4Principal = detectarValorSelectorCaras()[3];
+        valorCaja5Principal = detectarValorSelectorCaras()[4];
+        valorCaja6Principal = detectarValorSelectorCaras()[5];
+        var valorSeleccion = detectarValorSelectorCaras()[6];
+        if(rondaAnterior == 2 && DivTotal == 0){
+            RondaTexto = 1;
+        }
+        if(numAleatorio ==  1){
+            creandoDiv(valorCaja1Principal,valorSeleccion);
+            DivsMovimientoCreacion();
+        }
+        if(numAleatorio ==  2){
+            creandoDiv(valorCaja2Principal,valorSeleccion)
+            DivsMovimientoCreacion();
+        }
+        if(numAleatorio ==  3){
+            creandoDiv(valorCaja3Principal,valorSeleccion)
+            DivsMovimientoCreacion();
+        }
+        if(numAleatorio ==  4){
+            creandoDiv(valorCaja4Principal,valorSeleccion)
+            DivsMovimientoCreacion();
+        }
+        if(numAleatorio ==  5){
+            creandoDiv(valorCaja5Principal,valorSeleccion)
+            DivsMovimientoCreacion();
+        }
+        if(numAleatorio ==  6){
+            creandoDiv(valorCaja6Principal,valorSeleccion)
+            DivsMovimientoCreacion();
+        }
+
+    }
 }

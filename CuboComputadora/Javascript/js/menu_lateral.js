@@ -1,6 +1,13 @@
 const { ipcRenderer } = require('electron')
+const remote = require('electron').remote
 $(function() {
-    // Sidebar toggle behavior
+  
+    $('#cerrarbtn').on('click', function()  {
+        remote.getCurrentWindow().close()
+    })
+    $('#minimizarbtn').on('click', e => {
+      remote.getCurrentWindow().minimize()
+   })
     $('#Juegos').on('click', function() {
       $('.barraJuegos,.navPrincipal').toggleClass('active');
     });
@@ -10,8 +17,20 @@ $(function() {
     $('#valor1').on('click', function() {
       $('#caja3').toggleClass('active');
     });
+    $('#botonPrev').on('click', function() {
+      seleccionDeCara();
+    });
     $('#botonJugar').on('click', function() {
-          $('#caja1,#caja2,#caja3,#selectorNiveles,.barraJuegos').toggleClass('active');
+      if($('.barraJuegos').hasClass('active')){
+        $('.barraJuegos').toggleClass('active');
+      }
+      if(!($('.Rondas').hasClass('active'))){
+        $('.Rondas').toggleClass('active');
+      }
+      if(!($('.TextoVentanaJuego').hasClass('active'))){
+        $('.TextoVentanaJuego').toggleClass('active');
+      }
+          $('#caja1,#caja2,#caja3,#selectorCaras,#selectorNiveles').toggleClass('active');
           var  selectorNiveles = document.getElementById("selectorNiveles");
           var valorselectorNiveles = selectorNiveles.options[selectorNiveles.selectedIndex].value;
           var  caja1Color = document.getElementById("caja1");
@@ -20,16 +39,28 @@ $(function() {
           var valorCaja2Color = caja2Color.options[caja2Color.selectedIndex].value;
           var  caja3Color = document.getElementById("caja3");
           var valorCaja3Color = caja3Color.options[caja3Color.selectedIndex].value;
-          if(valorselectorNiveles == 1){nuevoJuego(1,valorCaja1Color,valorCaja2Color,0);}
-          if(valorselectorNiveles == 2){nuevoJuego(2,valorCaja1Color,valorCaja2Color,valorCaja3Color);}
-          if(valorselectorNiveles == 3){nuevoJuego(3,0,0,0);}
+          if(valorselectorNiveles == 1){NuevoJuego(1);}
+          if(valorselectorNiveles == 2){NuevoJuego(2);}
+          if(valorselectorNiveles == 3){NuevoJuego(3);}
+          vidasMover();
 
     });
     $('#Buscando').on('click', function() {
-      $('#caja1,#caja2,#caja3,#selectorNiveles').toggleClass('active');
+      $('#caja1,#caja2,#caja3,.TextoVentanaJuego,#selectorCaras,#selectorNiveles,.VentanaDeJuegos,.barraPuntos,.Rondas').toggleClass('active');
+      JuegoQueSeJuega = 'BuscandoCaras';
+      if(ronda > 0){
+        $('.Div' + ronda).css("margin-left","100%" );
+        if(!$('#caja1').hasClass('active')){
+          $('.Div' + ronda).css("margin-left","75.5%" );
+        }
+      }
+      
     });
+
+    /* SIMON DICE JUEGO */
     $('#SimonDice').on('click', function() {
       $('#caja1,#caja2,#caja3,#selectorNiveles').toggleClass('active');
+      JuegoQueSeJuega = 'SimonDice';
     });
     
   

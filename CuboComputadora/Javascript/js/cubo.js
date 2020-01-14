@@ -26,7 +26,9 @@ function checkKey(e) {
     }
     $('#cube').attr('style', 'transform: rotateX(' + angX + 'deg) rotateY(' + angY + 'deg);')
 
-    valorCaraActual = CaraADetectar();
+    
+    
+    
 }
 $('.boton').on('click', function() {
   switch ($(this).attr("id")) {

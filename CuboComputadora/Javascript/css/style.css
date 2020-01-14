@@ -5,6 +5,9 @@
 body{
     height: 728px;
     width: 100%;
+    background-color: #393D40; 
+    /*background-image:url("../img/fondo.svg") ;*/
+    background-repeat: no-repeat;
 
 }
 .navPrincipal{
@@ -34,18 +37,20 @@ body{
 
 .VentanaDeJuegos{
     position: absolute;
+    
     height: 728px;
-   /* width: 98.75%;*/
-    width: 66%;
+    width: 98.75%;
+   /* width: 66%; Para cuando se active*/
     /* margin-top: -800px; */
-    background-color: #393D40;
+    background-color: transparent;
     transition: all 0.4s;
-    border-right: 4px solid white;
+   /* animation: FondoAplicacion 20s infinite;*/
+   
 } 
 .VentanaDeJuegos.active{
-    margin-left: 100px;
-    width: 1200px;
-    transition: all 0.4s;
+    border-right: 4px solid white;
+    width: 66%;
+    animation: VentanaJuegosAniBorder 2s infinite; 
 } 
 .Ingreso.active{
     margin-left: -250px;
@@ -57,9 +62,16 @@ form{
 .col-sm-11{
     margin-left: 20px;
 }
+.fondoCubo{
+    background-image:url("../img/fondo.jpg") ;
+    background-repeat: no-repeat;
+    height: 728px;
+    width: 50%;
+}
 #CuboContainer{
     margin-top: 200px;
     margin-left: 400px;
+    
 }
 #iconoCubo{
     border: 2px solid #4edba7;
@@ -69,11 +81,17 @@ form{
     width: 100%;
 }
 .barraPuntos{
-
+    height: 728px;
+    width: 0%;
+    background-color: transparent;
+    margin-left: 66%;
+}
+.barraPuntos.active{
     height: 728px;
     width: 34%;
-    background-color: #393D40;
+    background-color: transparent;
     margin-left: 66%;
+    transition: all 0.4s;
 }
 .txt{
     color: white;
@@ -83,15 +101,16 @@ form{
     height: 600px;
     width: 100%;
     position: fixed;
+    z-index: -1;
 }
-#CarasMod{
+/*#CarasMod{
     height: 200px;
     width: 200px;
     background-color: #393D40;
     margin-left: 150px;
     border-radius: 5%;
     transition: all 1s;
-}
+}*/
 .barraJuegos{
     height: 728px;
     width: 250px;
@@ -127,15 +146,15 @@ form{
 }
 #menuJuego{
     height: 400px;
-    width: 200px;
+    width: 300px;
     position: fixed;
     margin-left: 350px;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 .opcionesJuego{
     width: 300px;
     height: 200px;
-    background-color: #393D40;
+    background-color: transparent;
 }
 .seleccionColor{
     width: 50px;
@@ -143,23 +162,23 @@ form{
     padding: 10px 10px;
 }
 .rojocaja{
-    background: hsla(0, 100%, 50%, 1);
+    background: hsla(0, 100%, 60%, 1);
     padding: 10px 10px;
 }
 .azulcaja{
-    background: hsla(240, 100%, 50%, 1);
+    background: hsla(240, 100%, 60%, 1);
     padding: 10px 10px;
 }
 .rosacaja{
-    background: hsla(300, 100%, 50%, 1);
+    background: hsla(300, 100%, 60%, 1);
     padding: 10px 10px;
 }
 .verdecaja{
-    background: hsla(120, 100%, 50%, 1);
+    background: hsla(120, 100%, 60%, 1);
     padding: 10px 10px;
 }
 .amarrillocaja{
-    background: hsla(60, 100%, 50%, 1);
+    background: hsla(60, 100%, 60%, 1);
     padding: 10px 10px;
 }
 .celestecaja{
@@ -171,44 +190,52 @@ form{
     padding: 10px 10px;
 }
 #caja1{
-    margin-top: 20px;
+    margin-top: 400px;
     padding: 10px 10px;
     transition: all 0.4s;
 }
 #caja2{
-    margin-top: 20px;
+    margin-top: 400px;
     padding: 10px 10px;
     transition: all 0.4s;
 }
 #caja3{
-    margin-top: 20px;
+    margin-top: 400px;
     padding: 10px 10px;
     margin-left: 4px;
     position: fixed;
     transition: all 0.4s;
 }
 #caja3.active{
-    margin-top: 400px;
+    margin-top: 20px;
     transition: all 0.4s;
 }
 #caja2.active{
-    margin-top: 400px;
+    margin-top: 20px;
     transition: all 0.4s;
 }
 #caja1.active{
+    margin-top: 20px;
+    transition: all 0.4s;
+}
+
+#selectorCaras{
     margin-top: 400px;
     transition: all 0.4s;
+
 }
-#caja1.desactive{
-    margin-top: 200px;
+#selectorCaras.active{
     transition: all 0.4s;
+    margin-top: 0px;
+
 }
 #selectorNiveles{
+    margin-top: 400px;
     transition: all 0.4s;
 }
 #selectorNiveles.active{
     transition: all 0.4s;
-    margin-top: 400px;
+    margin-top: 10px;
 }
 #botonJugar{
     position: fixed;
@@ -305,21 +332,16 @@ form{
     color: white;
     
 }
-@keyframes mymove {
-    0%   {transform: scale(1,1);}
-    50%   {transform: scale(0.8,0.8);}
-    100% {transform: scale(1,1);}
-    
-  }
+
 .AnuncioD{
     
 }
 .contRondas{
     position: fixed;
-    background-color: #393D40;
+    background-color: transparent;
     margin-left: 810px;
     margin-top: -470px;
-    color: #4edba7;
+    color: transparent;
     width: 400px;
     font-size: 1.5rem;
     font-family: Helvetica;
@@ -331,6 +353,267 @@ form{
     border-bottom-left-radius: 20%;
     border-top-right-radius: 20%;
     border: 2px solid;
-    height: 60px;
+    height: 60px;    
     
+}
+.Rondas.active{
+    color:#4edba7;
+    animation:BordesRondasCajas 1s linear forwards;
+
+}
+/*
+#Ronda1{
+    animation:BordesRondasCajas 1s linear forwards;
+}
+#Ronda2{
+    animation:BordesRondasCajas 1s linear forwards;
+}
+#Ronda3{
+    animation:BordesRondasCajas 1s linear forwards;
+}
+#Ronda4{
+    animation:BordesRondasCajas 1s linear forwards;
+}
+#Ronda5{
+    animation:BordesRondasCajas 1s linear forwards;
+}
+#Ronda6{
+    animation:BordesRondasCajas 1s linear forwards;
+}
+#Ronda7{
+    animation:BordesRondasCajas 1s linear forwards;
+}*/
+
+/*Animaciones */
+
+/* Animacion de los divs*/
+@keyframes mymove {
+    0%   {transform: scale(1,1);}
+    50%   {transform: scale(0.8,0.8);}
+    100% {transform: scale(1,1);}
+    
+  }
+
+  /*Animacion Ventana De Juegos borde*/
+  @keyframes VentanaJuegosAniBorder {
+    0%   {border-right:4px solid white;}
+    50% {border-right:4px solid #4edba7;}
+    100% {border-right:4px solid white;}
+    
+  }
+  /*Cambiar color fondo*/
+  @keyframes FondoAplicacion {
+    0%   {background-color:#393D40;}
+    50% {background-color: #717980;}
+    100%{background-color:#393D40;}
+    
+  }
+  @keyframes BordesRondasCajas{
+      0% {
+          width: 0%;
+          height: 0%;
+          border-top-color: transparent;
+          border-right-color: transparent;
+          border-left-color:transparent ;
+          border-bottom-color: transparent;
+      }
+      50% {
+        width: 100%;
+        height: 0%;
+        border-top-color: #4edba7;
+        border-right-color: transparent;
+        border-left-color:transparent ;
+        border-bottom-color: transparent;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: #4edba7;
+        border-right-color: #4edba7;
+        border-left-color:transparent ;
+        border-bottom-color: transparent;
+    }
+
+    
+  }
+  @keyframes BordesRondasCajas2{
+    0% {
+        width: 100%;
+        height: 100%;
+        border-top-color: #4edba7;
+        border-right-color: #4edba7;
+        border-left-color:transparent ;
+        border-bottom-color: transparent;
+    }
+    
+    50% {
+      width: 100%;
+      height: 0%;
+      border-top-color: #4edba7;
+      border-right-color: transparent;
+      border-left-color:transparent ;
+      border-bottom-color: transparent;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color  :transparent ;
+    border-bottom-color: transparent;
+}
+  
+
+}
+@keyframes TextoPrincipal{
+    0%{
+        margin-top: 0px;
+
+
+    }
+    35%{
+        margin-top: 0px;
+    }
+    40%{
+        margin-top: -77px;
+    }
+    75%{
+        margin-top: -77px;
+    }
+    80%{
+        margin-top: 0px;
+    }
+}
+
+
+/*Perro*/
+
+.TextoVentanaJuego.active{
+    overflow: hidden;
+    margin-top: -400px;
+    transition: 0.4s linear;
+}
+.TextoVentanaJuego{
+    overflow: hidden;
+    margin-left: 700px;
+    margin-top: 200px;
+    width: 250px;
+    height: 150px;
+    background-color: transparent;
+    position: fixed;
+    transition: 0.4s linear;
+}
+.TextoVamosaJugar{
+    font-size: 4rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color:white;
+    text-align: center;
+    animation: TextoPrincipal 10s infinite;
+    
+}
+
+/*Corazones */
+.corazon {
+    margin-left: 10px;
+    margin-top : -40px;
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    transform: rotate(-45deg);
+    background: #d93434;
+    position: initial;
+    top: 10rem;
+    left: 10rem;
+    transition: all 0.4s;
+    /*margin-top: 30px;*/
+    animation: corazonAnimacion 2s infinite;
+  }
+  
+  .corazon:before,
+  .corazon:after {
+    content: "";
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: #d93434;
+    position: absolute;
+  }
+  
+  .corazon:before {
+    top: 0;
+    left: 50%;
+  }
+  
+  .corazon:after {
+    top: -50%;
+  }
+
+.linea {
+    position: absolute;
+    width: 150%;
+    height: 15%;
+    background: #4edba7;
+    top: 35%;
+    z-index: 200;
+    border-top-right-radius: 30%;
+}
+.Vidas{
+    margin-left: 150px;
+    height: 200px;
+    width: 200px;
+    position: fixed;
+    overflow: hidden;
+
+}
+#Corazon2{
+    margin-top: 0px;
+}
+#Corazon2{
+    margin-left: 80px;
+    margin-top: -25px;
+}
+#Corazon3{
+    margin-left: 150px;
+    margin-top: -25px;
+}
+/*Animacion Corazones*/
+@keyframes corazonAnimacion{
+    0%{
+        transform : scale(1,1)
+    }
+    50%{
+        transform :scale(1.3,1.3);
+    }
+    100%{
+        transform:scale(1,1)
+    }
+}
+#ParteSuperior{
+
+    position: fixed;
+    width: 100%;
+    height: 100px;
+}
+
+.list-group-item:last-child{
+    background-color: #333a42;
+}
+
+.rellenoPS{
+    width: 100%;
+}
+.badge-primary {
+    color: #fff;
+    background-color: #0095ff;
+    font-size: 13px;
+    width: 50px;
+    height: 20px;
+    margin-left: 5px;
+}
+#prevImg{
+    height: 30px;
+    width: 50px;
+}
+#botonPrev{
+    margin-left: 20%;
 }

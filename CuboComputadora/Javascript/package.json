@@ -11,7 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "jquery": "^3.4.1",
-    "serialport": "^8.0.5"
+    "serialport": "^8.0.5",
+    "three": "^0.112.1"
   },
   "devDependencies": {
     "bootstrap": "^4.3.1",
