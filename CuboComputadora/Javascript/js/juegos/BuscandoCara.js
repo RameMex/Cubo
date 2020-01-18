@@ -30,18 +30,6 @@ var jugGanado = false;
 var JuegoQueSeJuega = '';
 var temporal = false;
 var tiempoDeInicio = 5000;
-function NuevoJuego(nivelAct){
-    ReiniciandoVariables();
-    nivel = nivelAct;
-    seleccionDeCara();
-    var e = true;
-    var Perdio = false;
-    var GanoRondas = false;
-    var numDivs = 1;
-    
-    cuerpoJuego(vidas,Puntos);
-   
-}
 
 
 /*function CaraADetectar(x,y,nivel){
@@ -185,9 +173,10 @@ function cuerpoJuego(){
         }else if(jugGanado == true){
             JugandoAhora = false;       
          }else{
+            quitarVidas();
             cuerpoJuego();
             finDelJuego();
-            quitarVidas();
+            
             
          }
      }, 10);
@@ -313,12 +302,12 @@ function moviendoDiv(variablex){
        
     }
      //$('.Div' + (ronda - 1)).attr('style','transform:scale(0.25,0.25); margin-left: '+ (66 + EspacioLinea*2) +'%; margin-top:'+ (-520 + SaltoLinea*30) +'px; height:200px; width:200px; background-color:black; transition: all 0.4; ')
-     $('.Div' + (ronda - 1)).css("margin-left",(64 + (EspacioLinea*3))+"%");
-     $('.Div' + (ronda - 1)).css("margin-top",(-510 + (SaltoLinea*40))+"px");
-     $('.Div' + (ronda - 1)).css("transform","scale(0.15,0.15)");
-     $('.Div' + (ronda - 1)).css("transition","all 0.4s");
-     $('.Div' + (ronda - 1)).css("border","4px solid white");
-     $('.Div' + (ronda - 1)).css("opacity","0.4");
+    $('.Div' + (ronda - 1)).css("margin-left",(64 + (EspacioLinea*3))+"%");
+    $('.Div' + (ronda - 1)).css("margin-top",(-510 + (SaltoLinea*40))+"px");
+    $('.Div' + (ronda - 1)).css("transform","scale(0.15,0.15)");
+    $('.Div' + (ronda - 1)).css("transition","all 0.4s");
+    $('.Div' + (ronda - 1)).css("border","4px solid white");
+    $('.Div' + (ronda - 1)).css("opacity","0.4");
 }
 function agregandoTextoRonda(){
     var Textoronda = document.createElement('P');
@@ -507,7 +496,9 @@ function QuitandoBuscandoCaras(){
 }
 
 function comparacionDiv(){
+
     numAleatorio = Math.round(Math.random() * (6 - 1) + 1);
+    
     if(nivel == 1 ){
         valorCaja1Principal = detectarValorSelectorCaras()[0];
         valorCaja2Principal = detectarValorSelectorCaras()[1];
@@ -582,4 +573,14 @@ function comparacionDiv(){
         }
 
     }
+}
+
+function transformacionManualDiv(){
+    lEspacioLinea = EspacioLinea +1;
+    $('.Div' + (ronda)).css("margin-left",(64 + (lEspacioLinea*3))+"%");
+    $('.Div' + (ronda)).css("margin-top",(-510 + (SaltoLinea*40))+"px");
+    $('.Div' + (ronda)).css("transform","scale(0.15,0.15)");
+    $('.Div' + (ronda)).css("transition","all 0.4s");
+    $('.Div' + (ronda)).css("border","4px solid white");
+    $('.Div' + (ronda)).css("opacity","0.4");
 }

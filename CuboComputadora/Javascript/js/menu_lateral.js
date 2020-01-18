@@ -1,5 +1,10 @@
 const { ipcRenderer } = require('electron')
 const remote = require('electron').remote
+$(function() { 
+
+  $(".toolgif").toolgif(); 
+
+});
 $(function() {
   
     $('#cerrarbtn').on('click', function()  {
@@ -8,6 +13,7 @@ $(function() {
     $('#minimizarbtn').on('click', e => {
       remote.getCurrentWindow().minimize()
    })
+   $('.barraJuegos').hover(function(){$('#buscandoCarasNav,#simonDiceNav,#completaPalabraNav').css("opacity","1" ); $('#buscandoCarasNav,#simonDiceNav,#completaPalabraNav').css("transition","all 0.4s" )},function(){$('#buscandoCarasNav,#simonDiceNav,#completaPalabraNav').css("opacity","0" );$('#buscandoCarasNav,#simonDiceNav,#completaPalabraNav').css("transition","all 0.4s" )})
     $('#Juegos').on('click', function() {
       $('.barraJuegos,.navPrincipal').toggleClass('active');
     });

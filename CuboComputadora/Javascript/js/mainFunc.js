@@ -1,3 +1,20 @@
+function NuevoJuego(nivelAct){
+    ReiniciandoVariables();
+    nivel = nivelAct;
+    seleccionDeCara();
+    var e = true;
+    var Perdio = false;
+    var GanoRondas = false;
+    var numDivs = 1;
+    if(JuegoQueSeJuega == 'BuscandoCaras'){
+        cuerpoJuego(vidas,Puntos);
+    }else if(JuegoQueSeJuega == 'SimonDice'){
+        cuerpoJuegoSimonDice(vidas,Puntos);
+    }
+    
+   
+}
+
 function vidasMover(){
     $(".corazon").css("margin-top",'30px' );
     $("#Corazon1").css("margin-top",'25px' );

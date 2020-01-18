@@ -9,6 +9,7 @@
 
   </head>
   <script>window.$ = window.jQuery = require('jquery');</script>
+  
 
   
   <body>
@@ -17,45 +18,51 @@
         <div class = "navPrincipal col-md-2">
               <!-- Vertical navbar -->
           <div class="vertical-nav" id="sidebar">
-              <div class="py-4 px-3 mb-4">
-                  <div class="media d-flex align-items-center"><img src="img/cubo5.0.svg" alt="..." width="65" class="mr-3 rounded-circle shadow-sm" id="iconoCubo"></div>
+              <div class="py-4 px-3 mb-4" >
+                  <div class="media d-flex align-items-center" style="margin-left: 15px;"><img src="img/cubo5.0.svg" alt="Cubo" width="65" class="mr-3 rounded-circle shadow-sm" id="iconoCubo"></div>
               </div>
             
             
               <p class="font-weight-bold text-uppercase px-3 small pb-4 mb-0 text-center" id="cuboletra">Cubo</p>
             
-              <ul class="nav flex-column mb-1">
-                <li class="nav-item">
+              <ul class="nav flex-column mb-1" id="ulDelnavP">
+                <li class="menu nav-item">
                   <a href="#" class="nav-link text-white font-arial" id="PaginaPrincipal">
                             
                             Principal
                         </a>
                 </li>
-                <li class="nav-item">
+                <li class="menu nav-item">
                   <a href="#" class="nav-link text-white font-arial" id="Juegos">
                             
                             Juegos
                         </a>
                 </li>
-                <li class="nav-item">
+                <li class="menu nav-item">
                   <a href="#" class="nav-link text-white font-arial">
                           
                             Progreso
                         </a>
                 </li>
-                <li class="nav-item">
+                <li class="menu nav-item">
                   <a href="#" class="nav-link text-white font-arial">
                           
                             Estadisticas
                         </a>
                 </li>
-                <li class="nav-item">
+                <li class="menu nav-item">
                     <a href="#" class="nav-link text-white font-arial" id="MenuConfiguracion">
                             
                               Configuracion
                           </a>
                   </li>
               </ul>
+              <div class="card text-white mb-3" id="cuerpoCardPie">
+                <img src="img/uni6.png" class="card-img-top"  id="imgUabc" alt="uabc">
+                <div class="card-body">
+                  <h5 class="card-title" id="pieDePagina">Universidad Autonoma Baja California</h5>
+                  
+                </div></div>
           </div>
         </div> 
           <!-- End vertical navbar -->
@@ -136,7 +143,7 @@
       </div>
       <div class="vamosaver"><p id= "tiempo"></p></div>
       <ul class="list-group" id="ParteSuperior">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-between align-items-center" id="ParteSuperiorCont">
           <div class="rellenoPS col-9.5"></div>
           <span class="badge badge-primary badge-pill btn col-sm-0.5" id="minimizarbtn">-</span>
           <span class="badge badge-primary badge-pill btn col-sm-0.5" id="cerrarbtn">X</span>
@@ -165,12 +172,16 @@
     </div>
     <div class="barraJuegos">
       <div class="juegos">
-        <div class="subjuegos" id="Buscando"><h1 class = "" id="BdeBuscando">B</h1></div>
-        <h4 class="subjuegostitulo">Buscando La Cara</h4>
-        <div class="subjuegos" id="SimonDice"><h1 class = "" id="SdeSimonDice">S</h1></div>
-        <h4 class="subjuegostitulo">Simon Dice</h4>
         
-      </div>
+        <span class="toolgif" data-toolgif-url="img/GifsMenu/1.gif" ><div class="subjuegos raw" id="Buscando"><img class="col-sm-15" id="BdeBuscando" src="img/icons/buscandoCara1.png"><h5 class="NavJ col-sm-20" id="buscandoCarasNav">Buscando Caras</h5>
+</div><i class="arrow" ></i></span>
+        
+      
+        <div class="subjuegos" id="SimonDice"><img id="SdeSimonDice" src="img/icons/simonDice1.svg" ></div><h5 class="NavJ col-sm-20" id="simonDiceNav">Simon Dice</h5>
+        <div class="subjuegos" id="CompletaPalabra"><img id="PdePalabra" src="img/icons/completaPalabra.png" ></div><h5 class="NavJ col-sm-20" id="completaPalabraNav">Completa La Palabra</h5>
+        
+        
+        </div>
       <div class="barrades">
         <h1 id="arrow"> < </h1>
       </div>
@@ -206,6 +217,7 @@
     <script src="js/seleccionDeCara.js"></script>
     <script src="js/juegos/simondice.js"></script>
     <script src="js/juegos/BuscandoCara.js"></script>
+    <script src="js/toolgif.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
 
