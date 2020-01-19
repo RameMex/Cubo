@@ -283,7 +283,7 @@ function creandoDiv(valorCara,valorSeleccion){
     $('.Div' + ronda).css("width","200px" );
     $('.Div' + ronda).css("position","fixed" );
     $('.Div' + ronda).css("margin-left","75.5%" );
-    $('.Div' + ronda).css("margin-top","-720px" );
+    $('.Div' + ronda).css("margin-top","-690px" );
     $('.Div' + ronda).css("transition","all 0.4s" );
     $('.Div' + ronda).css("border","4px solid white" );
     //$('.Div' + ronda).css("background-image","url("img/imgCaras/DodecahedronGeometry.svg")" );
