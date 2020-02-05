@@ -6,7 +6,7 @@ var port
 
 function conectarPuerto(puerto) {
 	try {
-		port = new SerialPort(puerto, { autoOpen: false, baudRate: 38400 })
+		port = new SerialPort(puerto, { autoOpen: false, baudRate: 115200 })
 		port.open(function(err) {
 			if(err) {
 				ipcRenderer.send('cubo_err')
@@ -53,4 +53,14 @@ function updateRotate(x, y, z){
 
 ipcRenderer.on('conectar_cubo', (event, arg) => {
 	conectarPuerto(arg)
+})
+
+ipcRenderer.on('custom_Cmd', (event, arg) => {
+	port.write(arg)
+})
+
+ipcRenderer.on('cambio_Brillo', (event, arg) => {
+	var cmd = "<2," + arg + ">"
+	console.log(cmd)
+	port.write(cmd)
 })
