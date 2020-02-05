@@ -1,6 +1,6 @@
 # LED Datos
 
-El programa recibe comandos de tipo <id_cmd, #LED, parametros>
+El programa recibe comandos de tipo <id_cmd, {, parametros}>
 
 
 ## Lista de comandos disponibles
