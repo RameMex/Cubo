@@ -23,7 +23,7 @@
               </div>
             
             
-              <p class="font-weight-bold text-uppercase px-3 small pb-4 mb-0 text-center" id="cuboletra">Cubo</p>
+              <p class="font-weight-bold  px-3 small pb-4 mb-0 text-center" id="cuboletra">Qbo</p>
             
               <ul class="nav flex-column mb-1" id="ulDelnavP">
                 <li class="menu nav-item">
@@ -95,12 +95,14 @@
                 -->
               <div class="col" id="menuJuego">
                   <div class="opcionesJuego raw-md-2" id="Nivel1">
-                     <select onchange="PonerTextoCaja()" class = "nivelSeleccion form-control col-md-6" name="" id="selectorCaras" >
-                      <option value="1" >Colores</option>
-                      <option value="2" id="valor1">Animales</option>
-                      <option value="3">Figuras</option>
-                      <option value="4"> Fechas</option>
-                    </select>
+                     <div class="colorTiempo">
+                      <select onchange="PonerTextoCaja()" class = "nivelSeleccion form-control col-md-6" name="" id="selectorCaras" >
+                        <option value="1" >Colores</option>
+                        <option value="2" id="valor1">Animales</option>
+                        <option value="3">Figuras</option>
+                        <option value="4"> Fechas</option>
+                      </select>
+                      <input type="text" class="form-control col-md-3 " id="tiempoTexto" >
                     
                       <select class = "nivelSeleccion form-control" name="" id="selectorNiveles" >
                         <option value="1" >Nivel 1</option>
@@ -179,14 +181,32 @@
       
         <div class="subjuegos" id="SimonDice"><img id="SdeSimonDice" src="img/icons/simonDice1.svg" ></div><h5 class="NavJ col-sm-20" id="simonDiceNav">Simon Dice</h5>
         <div class="subjuegos" id="CompletaPalabra"><img id="PdePalabra" src="img/icons/completaPalabra.png" ></div><h5 class="NavJ col-sm-20" id="completaPalabraNav">Completa La Palabra</h5>
-        
+        <div class="subjuegos" id="Dibujando"><img id="DdeDibujando" src="img/icons/dibujando2.svg" ></div><h5 class="NavJ col-sm-20" id="dibujandoNav">Dibujando</h5>
         
         </div>
       <div class="barrades">
         <h1 id="arrow"> < </h1>
       </div>
     </div>
-    <div class="AnuncioD col" id="JuegoPerdido">
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Buscando Cara</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <h1 class="raw-6">Volver A Jugar</h1>
+              <button class="raw-6"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="AnuncioD col-md-4" id="JuegoPerdido">
       <div class="raw-sm-4"></div>
       <div class="raw-sm-4">
           <div class="col-sm-2" id="Salir"></div>
@@ -215,7 +235,8 @@
     <script src="js/mainFunc.js"></script>
     <script src="js/barrapuntos.js"></script>
     <script src="js/seleccionDeCara.js"></script>
-    <script src="js/juegos/simondice.js"></script>
+    <script src="js/juegos/CompletaPalabras.js"></script>
+    <script src="js/juegos/SimonDice.js"></script>
     <script src="js/juegos/BuscandoCara.js"></script>
     <script src="js/toolgif.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
