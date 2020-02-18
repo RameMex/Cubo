@@ -1,4 +1,4 @@
-/* Toolgif | https://mburakerman.github.io/toolgif/ | @mburakerman | License: MIT */
+    /* Toolgif | https://mburakerman.github.io/toolgif/ | @mburakerman | License: MIT */
 (function() {
     $.fn.toolgif = function(options) {
 
@@ -96,14 +96,20 @@
             if ($.trim($(this).attr("data-toolgif-url"))) {
                 var dataUrl = $(this).attr("data-toolgif-url");
                 dataUrl = dataUrl.split(' ').join('+');
-                $.getJSON(url, function(mydata) {
-                    $($img).attr("src", dataUrl);
-                });
+                try {
+                    $.getJSON(url, function(mydata) {
+
+                        $($img).attr("src", dataUrl);
+                    });
+                } catch (error) {
+                    console.log('fuq')
+                }
+                
             } else {
                 function refreshUrl() {
-                    $.getJSON(url, function(mydata) {
-                        $($img).attr("src", mydata.data.image_url);
-                    });
+                        $.getJSON(url, function(mydata) {
+                            $($img).attr("src", mydata.data.image_url);
+                        });
                 }
                 refreshUrl();
             }
@@ -128,6 +134,8 @@
                         $img.stop(true).fadeOut(settings.speed);
                         $arrow.stop(true).fadeOut(settings.speed);
                         refreshUrl();
+
+                        
                     }
                 }
 
@@ -136,3 +144,5 @@
         });
     };
 })(jQuery);
+
+    

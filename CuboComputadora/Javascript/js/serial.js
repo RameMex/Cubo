@@ -1,24 +1,27 @@
 const SerialPort = require('serialport')
 const Readline = SerialPort.parsers.Readline
-
-const parser = new Readline( {delimiter: '\n' })
+var valorxs;
+const parser = new Readline({ delimiter: '\n' })
 var port
+var cont = 0;
+var x = 0;
+var y = 0;
+var z = 0;
 
 function conectarPuerto(puerto) {
 	try {
 		port = new SerialPort(puerto, { autoOpen: false, baudRate: 115200 })
 		port.open(function(err) {
-			if(err) {
+			if (err) {
 				ipcRenderer.send('cubo_err')
-			}
-			else{
+			} else {
 				port.pipe(parser)
 				ipcRenderer.send('cubo_ok')
 				console.log('exito conexion cubo')
 			}
 		})
-	}
-	catch {
+	} catch(err) {
+		console.log(err)
 		ipcRenderer.send('cubo_err')
 	}
 }
@@ -45,12 +48,32 @@ parser.on('data', function (data) {
 	}
 	console.log(data)
 	
-
+	if(cont == 0){
+		x = Number(data)
+		cont++
+	}
+	else if(cont == 1){
+		y = Number(data)
+		cont++
+	}
+	else if(cont == 2){
+		z = Number(data)
+		cont =0
+		updateRotate(x,y,z)
+	}
+	console.log(x)
+	console.log(y)
+	console.log(z)
 })
-function updateRotate(x, y, z){
-	$('#cube').attr('style', 'transform: rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg);')
-}
 
+function updateRotate(x, y, z) {
+	$('#cube').attr(
+		'style',
+		'transform: rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg);'
+	)
+	var vars = document.getElementById('cube')
+	console.log(vars)
+}
 ipcRenderer.on('conectar_cubo', (event, arg) => {
 	conectarPuerto(arg)
 })

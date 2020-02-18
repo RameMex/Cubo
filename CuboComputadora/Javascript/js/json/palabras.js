@@ -1,0 +1,21 @@
+var Palabrass = [
+    {
+        "Palabras":[{
+                "id":"1",
+                "palabra":"OSO"
+            },
+            {
+                "id":"2",
+                "palabra":"HOLA"
+            },
+            {
+                "id":"3",
+                "palabra":"BARCO"
+            },
+            {
+                "id":"4",
+                "palabra":"PERRO"
+            }
+        ]
+    }
+]

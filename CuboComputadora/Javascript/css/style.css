@@ -1,107 +1,103 @@
-*{
-    padding: 0px;
-
+* {
+	padding: 0px;
 }
-body{
-    height: 728px;
-    width: 100%;
-    background-color: #393D40; 
-    /*background-image:url("../img/fondo.svg") ;*/
-    background-repeat: no-repeat;
-
+body {
+	height: 728px;
+	width: 100%;
+	background-color: #393d40;
+	/*background-image:url("../img/fondo.svg") ;*/
+	background-repeat: no-repeat;
+	overflow: hidden;
 }
-.navPrincipal{
-    width: 128px;
-    height: 100%;
-    background-color: #26282a;
-    position: fixed;
-    padding: 0px;
-    margin: 0px;
-    margin-left: -15px;
-    z-index: 1;
-    transform: all 0.7s;
-
+.navPrincipal {
+	width: 128px;
+	height: 100%;
+	background-color: #26282a;
+	position: fixed;
+	padding: 0px;
+	margin: 0px;
+	margin-left: -15px;
+	z-index: 1;
+	transform: all 0.7s;
 }
 
-#cuboletra{
-    color: #4edba7;
+#cuboletra {
+	color: #4edba7;
 }
-.Ingreso{
-    height: 100%;
-    width: 350px;
-    border-right:2px solid #9e9e9e;
-    transition: all 0.4s;
-    z-index: -1;
-    transition: all 0.4s;
+.Ingreso {
+	height: 100%;
+	width: 350px;
+	border-right: 2px solid #9e9e9e;
+	transition: all 0.4s;
+	z-index: -1;
+	transition: all 0.4s;
 }
 
-.VentanaDeJuegos{
-    position: absolute;
-    
-    height: 728px;
-    width: 98.75%;
-   /* width: 66%; Para cuando se active*/
-    /* margin-top: -800px; */
-    background-color: transparent;
-    transition: all 0.4s;
-   /* animation: FondoAplicacion 20s infinite;*/
-   
-} 
-.VentanaDeJuegos.active{
-    border-right: 4px solid white;
-    width: 66%;
-    animation: VentanaJuegosAniBorder 2s infinite; 
-} 
-.Ingreso.active{
-    margin-left: -250px;
-    transition: all 0.4s;
+.VentanaDeJuegos {
+	position: absolute;
+
+	height: 728px;
+	width: 98.75%;
+	/* width: 66%; Para cuando se active*/
+	/* margin-top: -800px; */
+	background-color: transparent;
+	transition: all 0.4s;
+	/* animation: FondoAplicacion 20s infinite;*/
 }
-form{
-    margin-top: 100px;
+.VentanaDeJuegos.active {
+	border-right: 4px solid white;
+	width: 66%;
+	animation: VentanaJuegosAniBorder 2s infinite;
 }
-.col-sm-11{
-    margin-left: 20px;
+.Ingreso.active {
+	margin-left: -250px;
+	transition: all 0.4s;
 }
-.fondoCubo{
-    background-image:url("../img/fondo.jpg") ;
-    background-repeat: no-repeat;
-    height: 728px;
-    width: 50%;
+form {
+	margin-top: 100px;
 }
-#CuboContainer{
-    margin-top: 200px;
-    margin-left: 400px;
-    
+.col-sm-11 {
+	margin-left: 20px;
 }
-#iconoCubo{
-    border: 2px solid #4edba7;
+.fondoCubo {
+	background-image: url('../img/fondo.jpg');
+	background-repeat: no-repeat;
+	height: 728px;
+	width: 50%;
 }
-.contPrincipal{
-    height: 100%;
-    width: 100%;
+#CuboContainer {
+	margin-top: 200px;
+	margin-left: 400px;
 }
-.barraPuntos{
-    height: 728px;
-    width: 0%;
-    background-color: transparent;
-    margin-left: 66%;
+#iconoCubo {
+	border: 2px solid #4edba7;
 }
-.barraPuntos.active{
-    height: 728px;
-    width: 34%;
-    background-color: transparent;
-    margin-left: 66%;
-    transition: all 0.4s;
+.contPrincipal {
+	height: 100%;
+	width: 100%;
 }
-.txt{
-    color: white;
-    font-size: 28px;
+.barraPuntos {
+	height: 728px;
+	width: 0%;
+	background-color: transparent;
+	margin-left: 66%;
 }
-.secuencia{
-    height: 600px;
-    width: 100%;
-    position: fixed;
-    z-index: -1;
+.barraPuntos.active {
+	height: 728px;
+	width: 34%;
+	background-color: transparent;
+	margin-left: 66%;
+	transition: all 0.4s;
+}
+.txt {
+	color: white;
+	font-size: 28px;
+}
+.secuencia {
+	height: 600px;
+	width: 100%;
+	position: fixed;
+	z-index: -1;
 }
 /*#CarasMod{
     height: 200px;
@@ -111,268 +107,263 @@ form{
     border-radius: 5%;
     transition: all 1s;
 }*/
-.barraJuegos{
-    height: 250px;
-    width: 200px;
-    background-color: transparent;
-    position: fixed;
-    margin-top: -528px;
-    border-bottom-right-radius: 5%;
-    /*border-top-right-radius: 5%;*/
-    margin-left: -300px;
-    transition: all 0.4s;
-    /*border-right:4px solid #4edba7;*/
+.barraJuegos {
+	height: 320px;
+	width: 200px;
+	background-color: transparent;
+	position: fixed;
+	margin-top: -528px;
+	border-bottom-right-radius: 5%;
+	/*border-top-right-radius: 5%;*/
+	margin-left: -300px;
+	transition: all 0.4s;
+	/*border-right:4px solid #4edba7;*/
 }
-.barraJuegos:hover{
-    width: 380px;
-    background-color: #4edba7;
+.barraJuegos:hover {
+	width: 380px;
+	background-color: #4edba7;
 }
-.barraJuegos.active{
-    /*overflow: hidden;*/
-    margin-left: 0px;
-    transition: all 0.4s;
+.barraJuegos.active {
+	/*overflow: hidden;*/
+	margin-left: 0px;
+	transition: all 0.4s;
 }
-.barraJuegos.desactive{
-    margin-left: -300px;
-    transition: all 0.4s;
+.barraJuegos.desactive {
+	margin-left: -300px;
+	transition: all 0.4s;
 }
 
-.subjuegos{
-    /*background-color: white;
+.subjuegos {
+	/*background-color: white;
     height: 100px;
     width: 100px;*/
-    margin-left: 140px;
-    margin-top: 20px;/*
+	margin-left: 140px;
+	margin-top: 20px; /*
     border-top-left-radius: 20%;
     border-bottom-right-radius: 20%;*/
-    
 }
-.subjuegostitulo{
-    color: white;
-    margin-left: 140px;
+.subjuegostitulo {
+	color: white;
+	margin-left: 140px;
 }
-#menuJuego{
-    height: 400px;
-    width: 300px;
-    position: fixed;
-    margin-left: 350px;
-    margin-top: 0px;
+#menuJuego {
+	height: 400px;
+	width: 300px;
+	position: fixed;
+	margin-left: 350px;
+	margin-top: 0px;
 }
-.opcionesJuego{
-    width: 300px;
-    height: 200px;
-    background-color: transparent;
+.opcionesJuego {
+	width: 300px;
+	height: 200px;
+	background-color: transparent;
 }
-.seleccionColor{
-    width: 50px;
-    height: 50px;
-    padding: 10px 10px;
+.seleccionColor {
+	width: 50px;
+	height: 50px;
+	padding: 10px 10px;
 }
-.rojocaja{
-    background: hsla(0, 100%, 60%, 1);
-    padding: 10px 10px;
+.rojocaja {
+	background: hsla(0, 100%, 60%, 1);
+	padding: 10px 10px;
 }
-.azulcaja{
-    background: hsla(240, 100%, 60%, 1);
-    padding: 10px 10px;
+.azulcaja {
+	background: hsla(240, 100%, 60%, 1);
+	padding: 10px 10px;
 }
-.rosacaja{
-    background: hsla(300, 100%, 60%, 1);
-    padding: 10px 10px;
+.rosacaja {
+	background: hsla(300, 100%, 60%, 1);
+	padding: 10px 10px;
 }
-.verdecaja{
-    background: hsla(120, 100%, 60%, 1);
-    padding: 10px 10px;
+.verdecaja {
+	background: hsla(120, 100%, 60%, 1);
+	padding: 10px 10px;
 }
-.amarrillocaja{
-    background: hsla(60, 100%, 60%, 1);
-    padding: 10px 10px;
+.amarrillocaja {
+	background: hsla(60, 100%, 60%, 1);
+	padding: 10px 10px;
 }
-.celestecaja{
-    background: hsla(180, 100%, 50%, 1);
-    padding: 10px 10px;
+.celestecaja {
+	background: hsla(180, 100%, 50%, 1);
+	padding: 10px 10px;
 }
-.noseleccion{
-    background-color: white;
-    padding: 10px 10px;
+.noseleccion {
+	background-color: white;
+	padding: 10px 10px;
 }
-#caja1{
-    margin-top: 400px;
-    padding: 10px 10px;
-    transition: all 0.4s;
+#caja1 {
+	margin-top: 400px;
+	padding: 10px 10px;
+	transition: all 0.4s;
 }
-#caja2{
-    margin-top: 400px;
-    padding: 10px 10px;
-    transition: all 0.4s;
+#caja2 {
+	margin-top: 400px;
+	padding: 10px 10px;
+	transition: all 0.4s;
 }
-#caja3{
-    margin-top: 400px;
-    padding: 10px 10px;
-    margin-left: 4px;
-    position: fixed;
-    transition: all 0.4s;
+#caja3 {
+	margin-top: 400px;
+	padding: 10px 10px;
+	margin-left: 4px;
+	position: fixed;
+	transition: all 0.4s;
 }
-#caja3.active{
-    margin-top: 20px;
-    transition: all 0.4s;
+#caja3.active {
+	margin-top: 20px;
+	transition: all 0.4s;
 }
-#caja2.active{
-    margin-top: 20px;
-    transition: all 0.4s;
+#caja2.active {
+	margin-top: 20px;
+	transition: all 0.4s;
 }
-#caja1.active{
-    margin-top: 20px;
-    transition: all 0.4s;
+#caja1.active {
+	margin-top: 20px;
+	transition: all 0.4s;
 }
 
-#selectorCaras{
-    margin-top: 400px;
-    transition: all 0.4s;
-
+#selectorCaras {
+	margin-top: 400px;
+	transition: all 0.4s;
 }
-#selectorCaras.active{
-    transition: all 0.4s;
-    margin-top: 0px;
-
+#selectorCaras.active {
+	transition: all 0.4s;
+	margin-top: 0px;
 }
-#selectorNiveles{
-    margin-top: 400px;
-    transition: all 0.4s;
+#selectorNiveles {
+	margin-top: 400px;
+	transition: all 0.4s;
 }
-#selectorNiveles.active{
-    transition: all 0.4s;
-    margin-top: 10px;
+#selectorNiveles.active {
+	transition: all 0.4s;
+	margin-top: 10px;
 }
-#botonJugar{
-    position: fixed;
+#botonJugar {
+	position: fixed;
 }
-#botonJugar{
-    width: 300px;
+#botonJugar {
+	width: 300px;
 }
-#PdePalabra{
-    width: 48px;
-    /*height: 90px;*/
-    position: relative;
-    top: 50%;
+#PdePalabra {
+	width: 48px;
+	/*height: 90px;*/
+	position: relative;
+	top: 50%;
 }
-#SimonDice{
-    /*background-color: #4edba7;*/
-    /*text-align:center;
+#DdeDibujando {
+	width: 48px;
+	/*height: 90px;*/
+	position: relative;
+	top: 50%;
+}
+#SimonDice {
+	/*background-color: #4edba7;*/
+	/*text-align:center;
     border-bottom: 4px solid white;*/
 }
-#SdeSimonDice{
-    width: 48px;
-    /*height: 90px;*/
-    position: relative;
-    top: 50%;
-    /*transform: translateY(-50%);
+#SdeSimonDice {
+	width: 48px;
+	/*height: 90px;*/
+	position: relative;
+	top: 50%;
+	/*transform: translateY(-50%);
     font-size: 4rem;*/
-    color: black;
-
+	color: black;
 }
-#Buscando{
-    /*background-color: yellow;
+#Buscando {
+	/*background-color: yellow;
     text-align:center;
     border-bottom: 4px solid white;
     color: yellow;*/
-
 }
-#BdeBuscando{
-    width: 48px;
-   /* height: 90px;*/
-    position: relative;
-    top: 50%;
-   /* transform: translateY(-50%);*/
-    font-size: 3.5rem;
-    color: black;
-}
-
-.puntos{
-    position: fixed;
-    transition: all 0.4s;
-    margin-left: -370px;
-}
-#Puntostt{
-    transition: all 0.4s;
-}
-#tiempo{
-    position: fixed;
-    color: white;
-    margin-left: 450px;
-    margin-top: 100px;
-    font-size: 20px;
-}
-.vamosaver{
-    position: fixed;
-    background-image: url('../img/corazon.svg');
-    width: 50px;
-    height: 50px;
-}
-#JuegoPerdido{
-    height: 200px;
-    width: 300px;
-    background-color: black;
-    position: fixed;
-    margin-top: 550px;
-    margin-left: 400px;
-
-}
-#Salir{
-    background-color: blue;
-    width: 50%;
-    height: 50%;
-}
-#JugarDeNuevo{
-    background-color: green;
-    width: 50%;
-    height: 50%;
+#BdeBuscando {
+	width: 48px;
+	/* height: 90px;*/
+	position: relative;
+	top: 50%;
+	/* transform: translateY(-50%);*/
+	font-size: 3.5rem;
+	color: black;
 }
 
-.barrades{
-    margin-left: 260px;
-    margin-top: 40px;
-    position: fixed;
-    height: 50px;
-    width: 50px;
-    background-color: #4edba7;
-    border-radius: 50%;
-    animation: mymove 2s infinite;
+.puntos {
+	position: fixed;
+	transition: all 0.4s;
+	margin-left: -370px;
 }
-#arrow{
-    font-size: 3rem;
-    transform: translate(6px, -10px);
-    color: white;
-    
+#Puntostt {
+	transition: all 0.4s;
+}
+#tiempo {
+	position: fixed;
+	color: white;
+	margin-left: 450px;
+	margin-top: 100px;
+	font-size: 20px;
+}
+.vamosaver {
+	position: fixed;
+	background-image: url('../img/corazon.svg');
+	width: 50px;
+	height: 50px;
+}
+#JuegoPerdido {
+	height: 200px;
+	width: 300px;
+	background-color: black;
+	position: fixed;
+	margin-top: 550px;
+	margin-left: 400px;
+}
+#Salir {
+	background-color: blue;
+	width: 50%;
+	height: 50%;
+}
+#JugarDeNuevo {
+	background-color: green;
+	width: 50%;
+	height: 50%;
 }
 
-.AnuncioD{
-    
+.barrades {
+	margin-left: 260px;
+	margin-top: 40px;
+	position: fixed;
+	height: 50px;
+	width: 50px;
+	background-color: #4edba7;
+	border-radius: 50%;
+	animation: mymove 2s infinite;
 }
-.contRondas{
-    position: fixed;
-    background-color: transparent;
-    margin-left: 810px;
-    margin-top: -470px;
-    color: transparent;
-    width: 400px;
-    font-size: 1.5rem;
-    font-family: Helvetica;
-    
+#arrow {
+	font-size: 3rem;
+	transform: translate(6px, -10px);
+	color: white;
 }
-.Rondas{
-    margin-top: 0px;
-    border-bottom: 2px solid #4edba7;
-    border-bottom-left-radius: 20%;
-    border-top-right-radius: 20%;
-    border: 2px solid;
-    height: 60px;    
-    
-}
-.Rondas.active{
-    color:#4edba7;
-    animation:BordesRondasCajas 1s linear forwards;
 
+.AnuncioD {
+}
+.contRondas {
+	position: fixed;
+	background-color: transparent;
+	margin-left: 810px;
+	margin-top: -470px;
+	color: transparent;
+	width: 400px;
+	font-size: 1.5rem;
+	font-family: Helvetica;
+}
+.Rondas {
+	margin-top: 0px;
+	border-bottom: 2px solid #4edba7;
+	border-bottom-left-radius: 20%;
+	border-top-right-radius: 20%;
+	border: 2px solid;
+	height: 60px;
+}
+.Rondas.active {
+	color: #4edba7;
+	animation: BordesRondasCajas 1s linear forwards;
 }
 /*
 #Ronda1{
@@ -401,304 +392,325 @@ form{
 
 /* Animacion de los divs*/
 @keyframes mymove {
-    0%   {transform: scale(1,1);}
-    50%   {transform: scale(0.8,0.8);}
-    100% {transform: scale(1,1);}
-    
-  }
-
-  /*Animacion Ventana De Juegos borde*/
-  @keyframes VentanaJuegosAniBorder {
-    0%   {border-right:4px solid white;}
-    50% {border-right:4px solid #4edba7;}
-    100% {border-right:4px solid white;}
-    
-  }
-  /*Cambiar color fondo*/
-  @keyframes FondoAplicacion {
-    0%   {background-color:#393D40;}
-    50% {background-color: #717980;}
-    100%{background-color:#393D40;}
-    
-  }
-  @keyframes BordesRondasCajas{
-      0% {
-          width: 0%;
-          height: 0%;
-          border-top-color: transparent;
-          border-right-color: transparent;
-          border-left-color:transparent ;
-          border-bottom-color: transparent;
-      }
-      50% {
-        width: 100%;
-        height: 0%;
-        border-top-color: #4edba7;
-        border-right-color: transparent;
-        border-left-color:transparent ;
-        border-bottom-color: transparent;
-    }
-    100% {
-        width: 100%;
-        height: 100%;
-        border-top-color: #4edba7;
-        border-right-color: #4edba7;
-        border-left-color:transparent ;
-        border-bottom-color: transparent;
-    }
-
-    
-  }
-  @keyframes BordesRondasCajas2{
-    0% {
-        width: 100%;
-        height: 100%;
-        border-top-color: #4edba7;
-        border-right-color: #4edba7;
-        border-left-color:transparent ;
-        border-bottom-color: transparent;
-    }
-    
-    50% {
-      width: 100%;
-      height: 0%;
-      border-top-color: #4edba7;
-      border-right-color: transparent;
-      border-left-color:transparent ;
-      border-bottom-color: transparent;
-  }
-  100% {
-    width: 0%;
-    height: 0%;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-left-color  :transparent ;
-    border-bottom-color: transparent;
-}
-  
-
-}
-@keyframes TextoPrincipal{
-    0%{
-        margin-top: 0px;
-
-
-    }
-    35%{
-        margin-top: 0px;
-    }
-    40%{
-        margin-top: -77px;
-    }
-    75%{
-        margin-top: -77px;
-    }
-    80%{
-        margin-top: 0px;
-    }
+	0% {
+		transform: scale(1, 1);
+	}
+	50% {
+		transform: scale(0.8, 0.8);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
 }
 
+/*Animacion Ventana De Juegos borde*/
+@keyframes VentanaJuegosAniBorder {
+	0% {
+		border-right: 4px solid white;
+	}
+	50% {
+		border-right: 4px solid #4edba7;
+	}
+	100% {
+		border-right: 4px solid white;
+	}
+}
+/*Cambiar color fondo*/
+@keyframes FondoAplicacion {
+	0% {
+		background-color: #393d40;
+	}
+	50% {
+		background-color: #717980;
+	}
+	100% {
+		background-color: #393d40;
+	}
+}
+@keyframes BordesRondasCajas {
+	0% {
+		width: 0%;
+		height: 0%;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-left-color: transparent;
+		border-bottom-color: transparent;
+	}
+	50% {
+		width: 100%;
+		height: 0%;
+		border-top-color: #4edba7;
+		border-right-color: transparent;
+		border-left-color: transparent;
+		border-bottom-color: transparent;
+	}
+	100% {
+		width: 100%;
+		height: 100%;
+		border-top-color: #4edba7;
+		border-right-color: #4edba7;
+		border-left-color: transparent;
+		border-bottom-color: transparent;
+	}
+}
+@keyframes BordesRondasCajas2 {
+	0% {
+		width: 100%;
+		height: 100%;
+		border-top-color: #4edba7;
+		border-right-color: #4edba7;
+		border-left-color: transparent;
+		border-bottom-color: transparent;
+	}
+
+	50% {
+		width: 100%;
+		height: 0%;
+		border-top-color: #4edba7;
+		border-right-color: transparent;
+		border-left-color: transparent;
+		border-bottom-color: transparent;
+	}
+	100% {
+		width: 0%;
+		height: 0%;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-left-color: transparent;
+		border-bottom-color: transparent;
+	}
+}
+@keyframes TextoPrincipal {
+	0% {
+		margin-top: 0px;
+	}
+	35% {
+		margin-top: 0px;
+	}
+	40% {
+		margin-top: -77px;
+	}
+	75% {
+		margin-top: -77px;
+	}
+	80% {
+		margin-top: 0px;
+	}
+}
 
 /*Perro*/
 
-.TextoVentanaJuego.active{
-    overflow: hidden;
-    margin-top: -400px;
-    transition: 0.4s linear;
+.TextoVentanaJuego.active {
+	overflow: hidden;
+	margin-top: -400px;
+	transition: 0.4s linear;
 }
-.TextoVentanaJuego{
-    overflow: hidden;
-    margin-left: 700px;
-    margin-top: 200px;
-    width: 250px;
-    height: 150px;
-    background-color: transparent;
-    position: fixed;
-    transition: 0.4s linear;
+.TextoVentanaJuego {
+	overflow: hidden;
+	margin-left: 700px;
+	margin-top: 200px;
+	width: 250px;
+	height: 150px;
+	background-color: transparent;
+	position: fixed;
+	transition: 0.4s linear;
 }
-.TextoVamosaJugar{
-    font-size: 4rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    color:white;
-    text-align: center;
-    animation: TextoPrincipal 10s infinite;
-    
+.TextoVamosaJugar {
+	font-size: 4rem;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+		Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
+	color: white;
+	text-align: center;
+	animation: TextoPrincipal 10s infinite;
 }
 
 /*Corazones */
 .corazon {
-    margin-left: 10px;
-    margin-top : -40px;
-    position: fixed;
-    width: 25px;
-    height: 25px;
-    transform: rotate(-45deg);
-    background: #d93434;
-    position: initial;
-    top: 10rem;
-    left: 10rem;
-    transition: all 0.4s;
-    /*margin-top: 30px;*/
-    animation: corazonAnimacion 2s infinite;
-  }
-  
-  .corazon:before,
-  .corazon:after {
-    content: "";
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background: #d93434;
-    position: absolute;
-  }
-  
-  .corazon:before {
-    top: 0;
-    left: 50%;
-  }
-  
-  .corazon:after {
-    top: -50%;
-  }
+	margin-left: 10px;
+	margin-top: -40px;
+	position: fixed;
+	width: 25px;
+	height: 25px;
+	transform: rotate(-45deg);
+	background: #d93434;
+	position: initial;
+	top: 10rem;
+	left: 10rem;
+	transition: all 0.4s;
+	/*margin-top: 30px;*/
+	animation: corazonAnimacion 2s infinite;
+}
+
+.corazon:before,
+.corazon:after {
+	content: '';
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	background: #d93434;
+	position: absolute;
+}
+
+.corazon:before {
+	top: 0;
+	left: 50%;
+}
+
+.corazon:after {
+	top: -50%;
+}
 
 .linea {
-    position: absolute;
-    width: 150%;
-    height: 15%;
-    background: #4edba7;
-    top: 35%;
-    z-index: 200;
-    border-top-right-radius: 30%;
+	position: absolute;
+	width: 150%;
+	height: 15%;
+	background: #4edba7;
+	top: 35%;
+	z-index: 200;
+	border-top-right-radius: 30%;
 }
-.Vidas{
-    margin-left: 150px;
-    height: 200px;
-    width: 200px;
-    position: fixed;
-    overflow: hidden;
-
+.Vidas {
+	margin-left: 150px;
+	height: 200px;
+	width: 200px;
+	position: fixed;
+	overflow: hidden;
 }
-#Corazon2{
-    margin-top: 0px;
+#Corazon2 {
+	margin-top: 0px;
 }
-#Corazon2{
-    margin-left: 80px;
-    margin-top: -25px;
+#Corazon2 {
+	margin-left: 80px;
+	margin-top: -25px;
 }
-#Corazon3{
-    margin-left: 150px;
-    margin-top: -25px;
+#Corazon3 {
+	margin-left: 150px;
+	margin-top: -25px;
 }
 /*Animacion Corazones*/
-@keyframes corazonAnimacion{
-    0%{
-        transform : scale(1,1)
-    }
-    50%{
-        transform :scale(1.3,1.3);
-    }
-    100%{
-        transform:scale(1,1)
-    }
+@keyframes corazonAnimacion {
+	0% {
+		transform: scale(1, 1);
+	}
+	50% {
+		transform: scale(1.3, 1.3);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
 }
-#ParteSuperior{
-
-    position: fixed;
-    width: 100%;
-    height: 100px;
-}
-
-.list-group-item:last-child{
-    background-color: #333a42;
+#ParteSuperior {
+	position: fixed;
+	width: 100%;
+	height: 100px;
 }
 
-.rellenoPS{
-    width: 100%;
+.list-group-item:last-child {
+	background-color: #333a42;
+}
+
+.rellenoPS {
+	width: 100%;
 }
 .badge-primary {
-    color: #fff;
-    background-color: #0095ff;
-    font-size: 13px;
-    width: 50px;
-    height: 20px;
-    margin-left: 5px;
+	color: #fff;
+	background-color: #0095ff;
+	font-size: 13px;
+	width: 50px;
+	height: 20px;
+	margin-left: 5px;
 }
-#prevImg{
-    height: 30px;
-    width: 50px;
+#prevImg {
+	height: 30px;
+	width: 50px;
 }
-#botonPrev{
-    margin-left: 20%;
+#botonPrev {
+	margin-left: 20%;
 }
 
-#pieDePagina{
-    margin-top: -40px;
-    margin-left: 5%;
-    color: #4edba7;
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
+#pieDePagina {
+	margin-top: -40px;
+	margin-left: 5%;
+	color: #4edba7;
+	margin-bottom: 0.75rem;
+	font-size: 0.95rem;
 }
-#cuerpoCardPie{
-    max-width: 18rem;
-    background-color: #26282a;
+#cuerpoCardPie {
+	max-width: 18rem;
+	background-color: #26282a;
 }
-#ulDelnavP{
-    border-top: 2px solid #4edba7;
-    margin-top: 20px;
+#ulDelnavP {
+	border-top: 2px solid #4edba7;
+	margin-top: 20px;
 }
 li.menu.nav-item {
-    margin-top: 20px;
+	margin-top: 20px;
 }
-#imgUabc{
-    width: 110%;
+#imgUabc {
+	width: 110%;
 }
-.toolgif{
-    color:initial;
-    position: relative;
-    top:0px;
-    left: 0px;
+.toolgif {
+	color: initial;
+	position: relative;
+	top: 0px;
+	left: 0px;
 }
 
-.arrow{
-    position: absolute;
-    width: 0px;
-    height: 0px;
-    left: 50%;
-    margin-left: 200px;
-    top: -2px;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid;
-    opacity: 1;
-    display: none;
+.arrow {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	left: 50%;
+	margin-left: 200px;
+	top: -2px;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid;
+	opacity: 1;
+	display: none;
 }
-.NavJ{
-    position: fixed;
-    overflow: invisible;
-    top: 230px;
-    left: 200px;
-    color: white;
-    opacity: 0;
-    font-size: 1.2rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.NavJ {
+	position: fixed;
+	overflow: invisible;
+	top: 230px;
+	left: 200px;
+	color: white;
+	opacity: 0;
+	font-size: 1.2rem;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+		Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
 }
-.toolgif-gif{
-    margin-left: 380px !important;
-    border-top-right-radius: 20px !important;
-    top: -80px !important;
+.toolgif-gif {
+	margin-left: 380px !important;
+	border-top-right-radius: 20px !important;
+	top: -80px !important;
+	border-color: transparent !important;
 }
-#ParteSuperiorCont{
-    height: 30px;
+#ParteSuperiorCont {
+	height: 30px;
 }
 .list-group-item:last-child {
-    background-color: #26282a;
+	background-color: #26282a;
 }
 .badge-primary {
-    background-color: #4edba7;
+	background-color: #4edba7;
 }
-#simonDiceNav{
-    margin-top: 80px;
+#simonDiceNav {
+	margin-top: 80px;
 }
-#completaPalabraNav{
-    margin-top: 150px;
+#completaPalabraNav {
+	margin-top: 150px;
+}
+#dibujandoNav {
+	margin-top: 220px;
+}
+.form-control{
+	display: inline;
+}
+
+.modal-dialog{
+	top: 100px;
+    max-width: 350px;
 }
