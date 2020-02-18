@@ -1,11 +1,11 @@
 #include <Adafruit_DotStar.h>
 #include <SPI.h>
 
-#define NUMPIXELS 2 // Number of LEDs in strip
+#define NUMPIXELS 6 // Number of LEDs in strip
 
 // Here's how to control the LEDs from any two pins:
-#define DATAPIN    4
-#define CLOCKPIN   5
+#define DATAPIN    11
+#define CLOCKPIN   13
 Adafruit_DotStar strip(NUMPIXELS, DATAPIN, CLOCKPIN, DOTSTAR_BGR);
 
 const byte numChars = 32;

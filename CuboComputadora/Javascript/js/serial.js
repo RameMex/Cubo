@@ -26,8 +26,8 @@ function conectarPuerto(puerto) {
 	}
 }
 
-parser.on('data', function(data) {
-	/*if (data == 1){
+parser.on('data', function (data) {
+	if (data == 1){
 		console.log('Verde')
 		updateRotate(0, -90, 0)
 	} else if (data == 2){
@@ -45,8 +45,8 @@ parser.on('data', function(data) {
 	} else if (data == 6){
 		console.log('Morado')
 		updateRotate(0, -180, 0)
-	}*/
-	
+	}
+	console.log(data)
 	
 	if(cont == 0){
 		x = Number(data)
@@ -64,9 +64,8 @@ parser.on('data', function(data) {
 	console.log(x)
 	console.log(y)
 	console.log(z)
-
-	
 })
+
 function updateRotate(x, y, z) {
 	$('#cube').attr(
 		'style',
