@@ -17,37 +17,52 @@
 			<h4>Configuración</h4>
 		</div>
 
-		<div class="container">
-			<div class="row">
-				<div class="col col-4 text-right" style="flex-grow: 2;">
-					Puerto Serial:
-				</div>
-				<div class="col col-3 no-gutters">
-					<div class="form-group">
-						<select class="form-control form-control-sm" id="puertoCOM"></select>
-					</div>
-				</div>
-				<div class="col">
-					<div>
-						<button type="button" class="btn btn-primary btn-sm" id="btnRefresh">
-							Actualizar
-						</button>
-						<button type="button" class="btn btn-primary btn-sm" id="btnConectar">
-							Conectar
-						</button>
-						<label id="lblConectar" style="color: red;"></label>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<!-- Otra opcion de configuracion -->
-			</div>
-		</div>
+    <div class="container">
+      <!-- Seleccion puerto -->
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col col-4 text-right">
+          Puerto Serial: 
+        </div>
 
-		<div class="float-right" style="padding-right: 5px; padding-top: 25px;">
-			<button type="button" class="btn btn-secondary" id="btnAceptar">Aceptar</button>
-			<button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
-		</div>
+        <div class="col col-3 no-gutters">
+            <select class="form-control form-control-sm" id="puertoCOM"></select>
+        </div>
+        
+        <div class="col">
+          <button type="button" class="btn btn-primary btn-sm" id="btnRefresh">Actualizar</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnConectar">Conectar</button>
+          <label id="lblConectar" style="color: red;"></label>
+        </div>
+      </div>
+
+      <!-- Slider seleccionr brillo -->
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col col-4 text-right">
+          Brillo:
+        </div>
+        <div class="col-8">
+            <input type="range" min="25" max="255" id="sliderBrillo">
+        </div>
+      </div>
+      
+      <!-- Comando personalizado -->
+      <div class="row">
+        <div class="col col-4 text-right">
+          Comando:
+        </div>
+        <div class="col">
+          <input type="text" class="form-control form-control-sm" placeholder="<1, 0, 0x050000>" id="inputCmd">
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary btn-sm" id="btnSendCmd">Enviar</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="float-right" style="padding-right: 5px; padding-top: 25px;">
+      <button type="button" class="btn btn-secondary" id="btnAceptar">Aceptar</button>
+      <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+    </div>
 
 		<script src="../js/config.js"></script>
 	</body>
