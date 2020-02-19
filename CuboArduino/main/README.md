@@ -6,7 +6,7 @@ El programa recibe comandos de tipo <id_cmd, {, parametros}>
 ### Modificar color de un LED:
 `<1, #LED, Color_HEX>`
 
-#LED tiene un rango de 1-6  
+#LED tiene un rango de 0-5  
 Color_HEX es el color deseado en Hexadecimal
 
 ### Modificar intensidad de brillo:
