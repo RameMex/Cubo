@@ -7,7 +7,7 @@ Instalar la version mas reciente de [node.js](https://nodejs.org/en/download/) p
 ![alt text](https://raw.githubusercontent.com/Quak1/Cubo/master/CuboComputadora/Javascript/img/screen1.png)
 Reconstruccion de la interfaz
 
-![alt text](https://raw.githubusercontent.com/RameMex/Cubo/master/CuboComputadora/Javascript/img/CuboInterfaz.png)
+![alt text](https://github.com/RameMex/Cubo/blob/master/CuboComputadora/Javascript/img/CuboInterfaz.PNG)
 
 
 ## TODO
