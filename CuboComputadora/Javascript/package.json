@@ -10,6 +10,7 @@
   "author": "René Meza",
   "license": "MIT",
   "dependencies": {
+    "@davidmarkclements/hsl-to-hex": "^1.0.2",
     "jquery": "^3.4.1",
     "serialport": "^8.0.5",
     "three": "^0.112.1",

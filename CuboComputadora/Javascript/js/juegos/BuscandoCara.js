@@ -212,14 +212,16 @@ function creandoDiv(valorCara, valorSeleccion) {
 	CreandoDiv.className = 'Div' + ronda
 	document.body.appendChild(CreandoDiv)
 	//
-	$('.Div' + ronda).css('backgroundColor', valorCara)
-	if (valorSeleccion > 0) {
+	$('.Div' + ronda).css('backgroundColor','#' +valorCara)
+	console.log('#' + valorCara)
+	console.log(valorSeleccion)
+	if (valorSeleccion > 1) {
 		$('.Div' + ronda).css(
 			'background-image',
 			'url(' + direccionImagenes + valorCara + ')'
 		)
 		$('.Div' + ronda).css('background-repeat', 'no-repeat')
-		//$('.Div' + ronda).css("backgroundColor",'white' );
+		$('.Div' + ronda).css("backgroundColor",'white' );
 	}
 	$('.Div' + ronda).css('height', '200px')
 	$('.Div' + ronda).css('width', '200px')

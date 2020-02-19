@@ -1,10 +1,20 @@
+//Modulos
+
 //Colores
+/*
 var imgColor1 = 'hsla(0, 100%, 60%, 1)'
 var imgColor2 = 'hsla(240, 100%, 60%, 1)'
 var imgColor3 = 'hsla(300, 100%, 60%, 1)'
 var imgColor4 = 'hsla(120, 100%, 60%, 1)'
-var imgColor5 = 'hsla(260, 100%, 60%, 1)'
-var imgColor6 = 'hsla(180, 100%, 60%, 1)'
+var imgColor5 = 'hsla(60, 100%, 60%, 1)'
+var imgColor6 = 'hsla(180, 100%, 60%, 1)'*/
+
+var imgColor1 = 'FF3333'
+var imgColor2 = '3333FF'
+var imgColor3 = 'FF33FF'
+var imgColor4 = '33FF33'
+var imgColor5 = 'FFFF33📋'
+var imgColor6 = '33FFFF'
 //Animales
 var imgVaca = 'vaca.svg'
 var imgPuerco = 'puerco.svg'
@@ -96,60 +106,80 @@ function seleccionDeCara() {
 		Color3 = detectarValorSelectorCaras()[2]
 
 		if (valorselectorNiveles.value == 1) {
-			// Animal 1
-			$('#right').css('background-color', Color1)
+			// Colores
+			$('#right').css('background-color', '#'+ Color1)
 			$('#right').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,0,' +'0x' + Color1 + '>')
 
-			$('#bottom').css('background-color', Color1)
+			$('#bottom').css('background-color', '#'+ Color1)
 			$('#bottom').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,1,' +'0x' + Color1 + '>')
 
-			$('#top').css('background-color', Color1)
+			$('#top').css('background-color', '#'+ Color1)
 			$('#top').css('background-repeat', 'no-repeat')
-			//Animal 2
-			$('#front').css('background-color', Color2)
+			ipcRenderer.send("customCmd", '<1,2,' +'0x' + Color1 + '>')
+
+			$('#front').css('background-color', '#'+ Color2)
 			$('#front').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,3,' +'0x' + Color2 + '>')
 
-			$('#left').css('background-color', Color2)
+			$('#left').css('background-color', '#'+ Color2)
 			$('#left').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,4,' +'0x' + Color2 + '>')
 
-			$('#back').css('background-color', Color2)
+			$('#back').css('background-color', '#'+ Color2)
 			$('#back').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,5,'+ '0x' + Color2 + '>')
+
 		} else if (valorselectorNiveles.value == 2) {
-			$('#right').css('background-color', Color1)
+			$('#right').css('background-color', +'#'+ Color1)
 			$('#right').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,0,' +'0x' + Color1 + '>')
 
-			$('#bottom').css('background-color', Color1)
+			$('#bottom').css('background-color', +'#'+ Color1)
 			$('#bottom').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,1,' +'0x' + Color1 + '>')
 
-			$('#top').css('background-color', Color2)
+			$('#top').css('background-color', +'#'+ Color2)
 			$('#top').css('background-repeat', 'no-repeat')
-			//Animal 2
-			$('#front').css('background-color', Color2)
+			ipcRenderer.send("customCmd", '<1,2,' +'0x' + Color2 + '>')
+
+			$('#front').css('background-color', +'#'+ Color2)
 			$('#front').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,3,' +'0x' + Color2 + '>')
 
-			$('#left').css('background-color', Color3)
+			$('#left').css('background-color', +'#'+ Color3)
 			$('#left').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,4,' +'0x' + Color3 + '>')
 
-			$('#back').css('background-color', Color3)
+			$('#back').css('background-color', +'#'+ Color3)
 			$('#back').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,5,' +'0x' + Color3 + '>')
+
 		} else if (valorselectorNiveles.value == 3) {
-			$('#right').css('background-color', Color1)
+			$('#right').css('background-color',+'#'+ imgColor1)
 			$('#right').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,0,' +'0x' + imgColor1 + '>')
 
-			$('#bottom').css('background-color', Color2)
+			$('#bottom').css('background-color', +'#'+ imgColor2)
 			$('#bottom').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,1,' +'0x' + imgColor2 + '>')
 
-			$('#top').css('background-color', Color3)
+			$('#top').css('background-color', +'#'+ imgColor3)
 			$('#top').css('background-repeat', 'no-repeat')
-			//Animal 2
-			$('#front').css('background-color', Color4)
+			ipcRenderer.send("customCmd", '<1,2,' +'0x' + imgColor3 + '>')
+
+			$('#front').css('background-color', +'#'+ imgColor4)
 			$('#front').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,3,' +'0x' + imgColor4 + '>')
 
-			$('#left').css('background-color', Color5)
+			$('#left').css('background-color', +'#'+ imgColor5)
 			$('#left').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,4,' +'0x' + imgColor5 + '>')
 
-			$('#back').css('background-color', Color6)
+			$('#back').css('background-color', +'#'+ imgColor6)
 			$('#back').css('background-repeat', 'no-repeat')
+			ipcRenderer.send("customCmd", '<1,5,' +'0x' + imgColor6 + '>')
 		}
 	} else if (valorSelectorCaras.value == 2) {
 		Animal1 = detectarValorSelectorCaras()[0]

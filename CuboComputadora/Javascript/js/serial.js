@@ -10,7 +10,7 @@ var z = 0;
 
 function conectarPuerto(puerto) {
 	try {
-		port = new SerialPort(puerto, { autoOpen: false, baudRate: 115200 })
+		port = new SerialPort(puerto, { autoOpen: false, baudRate: 115200  }) //115200 colores
 		port.open(function(err) {
 			if (err) {
 				ipcRenderer.send('cubo_err')
@@ -64,7 +64,7 @@ parser.on('data', function(data) {
 	console.log(x)
 	console.log(y)
 	console.log(z)
-
+	
 	
 })
 function updateRotate(x, y, z) {
