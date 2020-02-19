@@ -1,59 +1,80 @@
+/*********************
+ *     Librerias     *
+ *********************/
 #include <Adafruit_DotStar.h>
 #include <SPI.h>
 #include <I2Cdev.h>
 #include <MPU6050.h>
 #include <Wire.h>
+#include <SoftwareSerial.h>
 
+/**********************
+ *     Constantes     *
+ **********************/
 #define NUMPIXELS 6 // Numero de LEDS
 
 // Pines para control de LED
-#define DATAPIN    4
-#define CLOCKPIN   5
+#define DATAPIN    11
+#define CLOCKPIN   13
+
+/************************
+ *     Definiciones     *
+ ***********************/
+MPU6050 sensor;
+SoftwareSerial BT(2,3);
 Adafruit_DotStar strip(NUMPIXELS, DATAPIN, CLOCKPIN, DOTSTAR_BGR);
 
-//Libreria para la comunicacion bluetooth
-#include <SoftwareSerial.h>
-// Pines comunicacion Bluetooth
-SoftwareSerial BT(2,3);
-
-// La dirección del MPU6050 puede ser 0x68 o 0x69, dependiendo 
-// del estado de AD0. Si no se especifica, 0x68 estará implicito
-MPU6050 sensor;
-
+/*********************
+ *     Variables     *
+ *********************/
+// Variables recepcion comunicacion serial
 const byte numChars = 32;
 char receivedChars[numChars];
-char tempChars[numChars];        // temporary array for use when parsing
+char tempChars[numChars];
+boolean newData = false;
 
-// variables to hold the parsed data
+// Variables comandos interpretados
 byte cmd;
 byte cmdLED;
 unsigned long cmdColor;
 
-boolean newData = false;
-
 // Valores RAW (sin procesar) del acelerometro y giroscopio en los ejes x,y,z
-int axf, ayf, azf;
-int cont = 0;
-String posicion = "";
-String dato = "";
+int ax, ay, az;
+int gx, gy, gz;
 
+long tiempo_prev;
+float dt;
+float ang_x, ang_y,ang_z;
+float ang_x_prev, ang_y_prev,ang_z_prev;
+
+// Variables intervalo envio de datos BT
 unsigned long previousMillis = 0;
-const long interval = 250;
+const int interval = 100;
 
+/*****************
+ *     setup     *
+ *****************/
 void setup() {
-    strip.begin(); // Initialize pins for output
+//	Inicia la tira de LEDs
+    strip.begin();
     strip.show();
-  
-    Serial.begin(115200);
-//    Serial.println("Esta demo recibe comandos de la forma: ");
-//    Serial.println("<cmd,LED,color>");
-//    Serial.println();
 
-	BT.begin(38400);    //Iniciando puerto serial
-	Wire.begin();           //Iniciando I2C  
-	sensor.initialize();    //Iniciando el sensor
+//	Comunicacion Serial
+    Serial.begin(115200);
+
+//	Comunicacion serial con BT
+	BT.begin(38400);
+
+//	Comunicacion I2C con sensor MPU
+	Wire.begin();
+	sensor.initialize();
+	if (sensor.testConnection()) Serial.println("Sensor iniciado correctamente");
+  	else Serial.println("Error al iniciar el sensor");
 }
 
+/****************
+ *     Loop     *
+*****************/
 void loop() {
     recvWithStartEndMarkers();
 
@@ -66,8 +87,6 @@ void loop() {
     
     if (newData == true) {
         strcpy(tempChars, receivedChars);
-            // this temporary copy is necessary to protect the original data
-            //   because strtok() used in parseData() replaces the commas with \0
         parseData();
         showParsedData();
         newData = false;
@@ -80,44 +99,41 @@ void loop() {
           strip.setBrightness(cmdLED);
           strip.show();
         }
-//        Serial.println();
     }
 }
 
+/****************************
+ *     Helper functions     *
+ ****************************/
+// Envio datos Bluethoot
 void bluetoothData() {
 	// Leer las aceleraciones y velocidades angulares
-	sensor.getAcceleration(&axf, &ayf, &azf);
-	float ax = axf * (9.81/16384.0);
-	float ay = ayf * (9.81/16384.0);
-	float az = azf * (9.81/16384.0);
+	sensor.getAcceleration(&ax, &ay, &az);
+	sensor.getRotation(&gx, &gy, &gz);
 
-	if (ax > 9)
-	{
-		BT.println(3);
-	}
-	else if (ax < -8.5)
-	{
-		BT.println(2);
-	}
-	else if (ay < -9)
-	{
-		BT.println(5);
-	}
-	else if (ay > 9)
-	{
-		BT.println(1);
-	}
-	else if (az < -9)
-	{
-		BT.println(4);
-	}
-	else if (az > 9)
-	{
-		BT.println(6);
-	}else
-	{
-		BT.println(0);
-	}
+	dt = (millis()-tiempo_prev)/1000.0;
+	tiempo_prev=millis();
+	
+	//Calcular los ángulos con acelerometro
+	float accel_ang_x=atan(ay/sqrt(pow(ax,2) + pow(az,2)))*(180.0/3.14);
+	float accel_ang_y=atan(-ax/sqrt(pow(ay,2) + pow(az,2)))*(180.0/3.14);
+	float accel_ang_z=atan(sqrt(pow(ay,2) + pow(az,2))/(az))*(180.0/3.14);
+	
+	//Calcular angulo de rotación con giroscopio y filtro complemento  
+	ang_x = 0.98*(ang_x_prev+(gx/131)*dt) + 0.02*accel_ang_x;
+	ang_y = 0.98*(ang_y_prev+(gy/131)*dt) + 0.02*accel_ang_y;
+	ang_z = 0.98*(ang_z_prev+(gz/131)*dt) + 0.02*accel_ang_z;
+	
+	ang_x_prev=ang_x;
+	ang_y_prev=ang_y;
+	ang_z_prev=ang_z;
+	
+	Serial.print(ang_x);
+	Serial.print("\n");
+	Serial.print(ang_y); 
+	Serial.print("\n");
+	Serial.print(ang_z); 
+	Serial.print("\n");
 }
 
 void recvWithStartEndMarkers() {
