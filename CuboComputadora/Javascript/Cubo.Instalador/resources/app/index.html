@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cubo.css">
+    <title>Cubo2.0</title>
+
+  </head>
+  <script>window.$ = window.jQuery = require('jquery');</script>
+  
+
+  
+  <body>
+    <div class="contPrincipal raw">
+      <div class="contSubprincipal col-md-2">
+        <div class = "navPrincipal col-md-2">
+              <!-- Vertical navbar -->
+          <div class="vertical-nav" id="sidebar">
+              <div class="py-4 px-3 mb-4" >
+                  <div class="media d-flex align-items-center" style="margin-left: 15px;"><img src="img/cubo5.0.svg" alt="Cubo" width="65" class="mr-3 rounded-circle shadow-sm" id="iconoCubo"></div>
+              </div>
+            
+            
+              <p class="font-weight-bold  px-3 small pb-4 mb-0 text-center" id="cuboletra">Qbo</p>
+            
+              <ul class="nav flex-column mb-1" id="ulDelnavP">
+                <li class="menu nav-item">
+                  <a href="#" class="nav-link text-white font-arial" id="PaginaPrincipal">
+                            
+                            Principal
+                        </a>
+                </li>
+                <li class="menu nav-item">
+                  <a href="#" class="nav-link text-white font-arial" id="Juegos">
+                            
+                            Juegos
+                        </a>
+                </li>
+                <li class="menu nav-item">
+                  <a href="#" class="nav-link text-white font-arial">
+                          
+                            Progreso
+                        </a>
+                </li>
+                <li class="menu nav-item">
+                  <a href="#" class="nav-link text-white font-arial">
+                          
+                            Estadisticas
+                        </a>
+                </li>
+                <li class="menu nav-item">
+                    <a href="#" class="nav-link text-white font-arial" id="MenuConfiguracion">
+                            
+                              Configuracion
+                          </a>
+                  </li>
+              </ul>
+              <div class="card text-white mb-3" id="cuerpoCardPie">
+                <img src="img/uni6.png" class="card-img-top"  id="imgUabc" alt="uabc">
+                <div class="card-body">
+                  <h5 class="card-title" id="pieDePagina">Universidad Autonoma Baja California</h5>
+                  
+                </div></div>
+          </div>
+        </div> 
+          <!-- End vertical navbar -->
+      </div>
+      <div class="contSubprincipal col-md-12">
+        
+          <div class="VentanaDeJuegos">
+            <div class="TextoVentanaJuego">
+              <h1 class="TextoVamosaJugar">¡Hola!</h1></br></br>
+              <h1 class="TextoVamosaJugar"> ¡Vamos a jugar!</h1>                        
+              <!-- <img src="img/perro.svg" alt="">-->
+            </div>
+              <section class="container" id="CuboContainer">
+                  <div id="cube">
+                    <figure class="back rounded" id="back"></figure>
+                    <figure class="left rounded" id="left"></figure>
+                    <figure class="bottom rounded" id="bottom"></figure>
+                    <figure class="front rounded" id="front"></figure>
+                    <figure class="right rounded" id="right"></figure>
+                    <figure class="top rounded" id="top"></figure>
+                  </div>
+                </section>
+                <!-- 
+                <section class="botones">
+                  <div class="boton" id="arriba">▲</div>
+                  <div class="boton" id="abajo">▼</div>
+                  <div class="boton" id="izquierda">◄</div>
+                  <div class="boton" id="derecha">►</div>
+                </section>
+                -->
+              <div class="col" id="menuJuego">
+                  <div class="opcionesJuego raw-md-2" id="Nivel1">
+                     <div class="colorTiempo">
+                      <select onchange="PonerTextoCaja()" class = "nivelSeleccion form-control col-md-6" name="" id="selectorCaras" >
+                        <option value="1" >Colores</option>
+                        <option value="2" id="valor1">Animales</option>
+                        <option value="3">Figuras</option>
+                        <option value="4"> Fechas</option>
+                      </select>
+                      <input type="text" class="form-control col-md-3 " placeholder="Tiempo" id="tiempoTexto" >
+                    
+                      <select class = "nivelSeleccion form-control" name="" id="selectorNiveles" >
+                        <option value="1" >Nivel 1</option>
+                        <option value="2" id="valor1">Nivel 2</option>
+                        <option value="3">Nivel 3</option>
+                      </select>
+                      <select onchange="this.className=this.options[this.selectedIndex].className " name="seleccionColor" id="caja1">
+                        <option  class = "noseleccion" value=""></option>
+                        <option class ="rojocaja active"  value="1"></option>
+                        <option class ="azulcaja active" value="2"></option>
+                        <option class ="rosacaja active" value="3"></option>
+                        <option class ="verdecaja active" value="4"></option>
+                        <option class ="amarrillocaja active" value="5"></option>
+                        <option class ="celestecaja active" value="6"></option>
+                      </select>
+                      <select onchange="this.className=this.options[this.selectedIndex].className" name="seleccionColor" id="caja2">
+                          <option  class = "noseleccion" value=""></option>
+                          <option class ="rojocaja active" value="1"></option>
+                          <option class ="azulcaja active" value="2"></option>
+                          <option class ="rosacaja active" value="3"></option>
+                          <option class ="verdecaja active" value="4"></option>
+                          <option class ="amarrillocaja active" value="5"></option>
+                          <option class ="celestecaja active" value="6"></option>
+                        </select>
+                        <select onchange="this.className=this.options[this.selectedIndex].className" name="seleccionColor" id="caja3">
+                            <option  class = "noseleccion" value=""></option>
+                            <option class ="rojocaja active" value="1"></option>
+                            <option class ="azulcaja active" value="2"></option>
+                            <option class ="rosacaja active" value="3"></option>
+                            <option class ="verdecaja active" value="4"></option>
+                            <option class ="amarrillocaja active" value="5"></option>
+                            <option class ="celestecaja active" value="6"></option>
+                          </select>
+                      
+                  </div>
+                  <div class="botonPrev col-md-8" id="botonPrev"><p class="btn btn-secondary btn-lg btn-block"><img id="prevImg" src="img/icons/prev.svg" alt="Previsualizar"></p></div>
+                  <div class="botonJugar" id="botonJugar"><p class="btn btn-primary btn-lg btn-block">Jugar</p></div>
+              </div>
+        </div>
+      </div>
+      <div class="vamosaver"><p id= "tiempo"></p></div>
+      <ul class="list-group" id="ParteSuperior">
+        <li class="list-group-item d-flex justify-content-between align-items-center" id="ParteSuperiorCont">
+          <div class="rellenoPS col-9.5"></div>
+          <span class="badge badge-primary badge-pill btn col-sm-0.5" id="minimizarbtn">-</span>
+          <span class="badge badge-primary badge-pill btn col-sm-0.5" id="cerrarbtn">X</span>
+        </li>
+      </ul>
+      <div class="Vidas">
+        <div class ='corazon' id="Corazon1">
+          <div class = 'linea' ></div>
+        </div>
+        <div class ='corazon' id="Corazon2">
+          <div class = 'linea'></div>
+        </div>
+        <div class ='corazon' id="Corazon3">
+          <div class = 'linea'></div>
+        </div>
+      </div>
+
+      <div class="barraPuntos">
+        <div class="puntos raw">
+          <div class="txt text-center"><p id= "Puntostt"></p></div>
+        </div> 
+        <div class="secuencia raw">
+          <div class="cuboSecuencia raw-md-4" id="CarasMod"></div>
+        </div>
+      </div>
+    </div>
+    <div class="barraJuegos">
+      <div class="juegos">
+        
+        <span class="toolgif" data-toolgif-url="img/GifsMenu/1.gif" ><div class="subjuegos raw" id="Buscando"><img class="col-sm-15" id="BdeBuscando" src="img/icons/buscandoCara1.png"><h5 class="NavJ col-sm-20" id="buscandoCarasNav">Buscando Caras</h5>
+</div><i class="arrow" ></i></span>
+        
+      
+        <div class="subjuegos" id="SimonDice"><img id="SdeSimonDice" src="img/icons/simonDice1.svg" ></div><h5 class="NavJ col-sm-20" id="simonDiceNav">Simon Dice</h5>
+        <div class="subjuegos" id="CompletaPalabra"><img id="PdePalabra" src="img/icons/completaPalabra.png" ></div><h5 class="NavJ col-sm-20" id="completaPalabraNav">Completa La Palabra</h5>
+        <div class="subjuegos" id="Dibujando"><img id="DdeDibujando" src="img/icons/dibujando2.svg" ></div><h5 class="NavJ col-sm-20" id="dibujandoNav">Dibujando</h5>
+        
+        </div>
+      <div class="barrades">
+        <h1 id="arrow"> < </h1>
+      </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Buscando Cara</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <h1 class="raw-6">Volver A Jugar</h1>
+              <button class="raw-6"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="AnuncioD col-md-4" id="JuegoPerdido">
+      <div class="raw-sm-4"></div>
+      <div class="raw-sm-4">
+          <div class="col-sm-2" id="Salir"></div>
+          <div class="col-sm-2" id="JuegarDeNuevo"></div>
+      </div>
+    </div>
+    <div class="contRondas col"> 
+        <div class="Rondas raw-md-2" id="Ronda1"><h4>1</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda2"><h4>2</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda3"><h4>3</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda4"><h4>4</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda5"><h4>5</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda6"><h4>6</h4></div>
+        <div class="Rondas raw-md-2" id="Ronda7"><h4>7</h4></div>
+        
+    </div>
+    
+   
+    
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/three/build/three.min.js"></script>
+    <script src="node_modules/three/build/three.js"></script>
+    <script src="js/cubo.js"></script>
+    <script src="js/menu_lateral.js"></script>
+    <script src="js/serial.js"></script>
+    <script src="js/mainFunc.js"></script>
+    <script src="js/barrapuntos.js"></script>
+    <script src="js/seleccionDeCara.js"></script>
+    <script src="js/juegos/CompletaPalabras.js"></script>
+    <script src="js/juegos/SimonDice.js"></script>
+    <script src="js/juegos/BuscandoCara.js"></script>
+    <script src="js/toolgif.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD-mBZegnHVX9S6ohupBA1M7z87AEui8Ww",
+    authDomain: "prueba2-93001.firebaseapp.com",
+    databaseURL: "https://prueba2-93001.firebaseio.com",
+    projectId: "prueba2-93001",
+    storageBucket: "prueba2-93001.appspot.com",
+    messagingSenderId: "279689391904",
+    appId: "1:279689391904:web:12513f8a0096d8c85ff145",
+    measurementId: "G-8B1JETYSQC"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+  </body>
+</html>

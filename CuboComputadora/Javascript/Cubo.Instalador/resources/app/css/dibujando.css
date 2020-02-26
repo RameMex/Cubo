@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.parteSuperiorDibujando{
+   /* width: 100%;
+    height: 30px;*/
+    background-color: #26282a;
+    margin: 0px;
+
+}
+.parteInferiorDibjuando{
+    width: 100%;
+    height: 100%;
+    /*width: 1200px;
+    height: 698px;*/
+    margin: 0px;
+    
+}
+.areaDibujo{
+   /* height: 698px;
+    width: 95%;*/
+    background-color: black;
+}
+.MenuDibujando{
+   /* height: 698px;
+    width: 5%;*/
+    background-color: blue;
+}
+.cerrarDibujando{
+    background-color: #4edba7;
+}
+#tituloDibujando{
+    color: white;
+}
+
+#areaDibujoCanvas{
+    width: 100%;
+    height: 628px;
+    position: absolute;
+}

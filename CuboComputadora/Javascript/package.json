@@ -5,20 +5,34 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "install": "electron-rebuild"
+    "install": "electron-rebuild",
+    "build": "electron-packager . --overwrite",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "author": "René Meza",
   "license": "MIT",
   "dependencies": {
     "@davidmarkclements/hsl-to-hex": "^1.0.2",
+    "bootstrap": "^4.4.1",
+    "electron": "^6.1.8",
+    "electron-builder": "^22.3.2",
     "jquery": "^3.4.1",
     "serialport": "^8.0.5",
     "three": "^0.112.1",
     "toolgif": "^2.0.2"
   },
   "devDependencies": {
-    "bootstrap": "^4.3.1",
-    "electron": "^6.0.12",
+    "bootstrap": "^4.4.1",
+    "electron": "^6.1.8",
+    "electron-packager": "^14.2.1",
     "electron-rebuild": "^1.8.6"
+  },
+  "build": {
+    "appId": "ReneMeza",
+    "windows": {
+      "category": "Cool"
+    }
   }
 }
